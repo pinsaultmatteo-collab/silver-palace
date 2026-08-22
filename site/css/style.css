@@ -621,8 +621,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Le Club ---------- */
 .club {
   background:
-    radial-gradient(ellipse 45% 55% at 5% 15%, rgba(122, 45, 150, 0.16), transparent 70%),
-    radial-gradient(ellipse 40% 45% at 98% 90%, rgba(216, 108, 170, 0.09), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 14%, transparent 82%, var(--noir-0) 97%),
+    radial-gradient(ellipse 45% 55% at 5% 18%, rgba(122, 45, 150, 0.16), transparent 70%),
+    radial-gradient(ellipse 40% 45% at 98% 80%, rgba(216, 108, 170, 0.09), transparent 70%),
     var(--noir-0);
 }
 .club-curve {
@@ -706,8 +707,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Expérience / Cards 3D ---------- */
 .experience {
   background:
-    linear-gradient(180deg, transparent 78%, var(--noir-0) 96%),
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(122, 45, 150, 0.35), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 16%, transparent 78%, var(--noir-0) 96%),
+    radial-gradient(ellipse 60% 40% at 50% 4%, rgba(122, 45, 150, 0.35), transparent 70%),
     radial-gradient(ellipse 35% 45% at 8% 70%, rgba(216, 108, 170, 0.1), transparent 70%),
     radial-gradient(ellipse 30% 40% at 95% 50%, rgba(69, 23, 90, 0.4), transparent 65%),
     var(--noir-0);
@@ -916,9 +917,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   overflow: hidden;
   padding: clamp(3rem, 8vh, 5rem) var(--gutter);
   background:
-    linear-gradient(180deg, var(--noir-0) 0%, transparent 18%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 18%, transparent 82%, var(--noir-0) 98%),
     radial-gradient(ellipse 50% 60% at 88% 32%, rgba(122, 45, 150, 0.17), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 5% 80%, rgba(155, 45, 110, 0.12), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 5% 72%, rgba(155, 45, 110, 0.12), transparent 70%),
     var(--noir-0);
 }
 .cabaret-sticky > .section-inner { width: 100%; }
@@ -1054,8 +1055,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Galerie danseuses ---------- */
 .gallery {
   background:
-    radial-gradient(ellipse 55% 45% at 50% 5%, rgba(122, 45, 150, 0.3), transparent 70%),
-    radial-gradient(ellipse 45% 40% at 92% 100%, rgba(216, 108, 170, 0.09), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 15%, transparent 85%, var(--noir-0) 98%),
+    radial-gradient(ellipse 55% 45% at 50% 12%, rgba(122, 45, 150, 0.3), transparent 70%),
+    radial-gradient(ellipse 45% 40% at 92% 88%, rgba(216, 108, 170, 0.09), transparent 70%),
     radial-gradient(ellipse 35% 45% at 3% 55%, rgba(69, 23, 90, 0.35), transparent 70%),
     var(--noir-0);
   overflow: hidden;
@@ -1156,7 +1158,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   inset: 0;
   background:
     radial-gradient(ellipse 75% 90% at 50% 50%, rgba(8, 5, 17, 0.3) 0%, rgba(8, 5, 17, 0.82) 100%),
-    linear-gradient(180deg, rgba(8, 5, 17, 0.88) 0%, rgba(13, 9, 22, 0.35) 30%, rgba(13, 9, 22, 0.4) 70%, rgba(8, 5, 17, 0.9) 100%),
+    linear-gradient(180deg, rgba(8, 5, 17, 1) 0%, rgba(8, 5, 17, 0.55) 9%, rgba(13, 9, 22, 0.35) 30%, rgba(13, 9, 22, 0.4) 70%, rgba(8, 5, 17, 0.6) 91%, rgba(8, 5, 17, 1) 100%),
     linear-gradient(90deg, rgba(8, 5, 17, 0.55) 0%, transparent 55%),
     linear-gradient(180deg, rgba(69, 23, 90, 0.25), rgba(122, 45, 150, 0.16));
 }
@@ -1395,8 +1397,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   padding: clamp(6rem, 18vh, 11rem) var(--gutter);
   text-align: center;
   background: var(--noir-0);
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
   overflow: hidden;
 }
 .cta-media {
@@ -1418,7 +1418,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   inset: 0;
   background:
     radial-gradient(ellipse 70% 85% at 50% 50%, rgba(8, 5, 17, 0.25) 0%, rgba(8, 5, 17, 0.78) 100%),
-    linear-gradient(180deg, rgba(8, 5, 17, 0.85) 0%, rgba(13, 9, 22, 0.25) 30%, rgba(13, 9, 22, 0.3) 70%, rgba(8, 5, 17, 0.88) 100%),
+    linear-gradient(180deg, rgba(8, 5, 17, 1) 0%, rgba(8, 5, 17, 0.5) 9%, rgba(13, 9, 22, 0.25) 30%, rgba(13, 9, 22, 0.3) 70%, rgba(8, 5, 17, 0.55) 91%, rgba(8, 5, 17, 1) 100%),
     linear-gradient(180deg, rgba(69, 23, 90, 0.22), rgba(122, 45, 150, 0.14));
 }
 .cta-band-inner { position: relative; z-index: 1; }
@@ -1494,7 +1494,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   inset: 0;
   background:
     radial-gradient(ellipse 62% 75% at 50% 55%, rgba(8, 5, 17, 0.55) 0%, rgba(8, 5, 17, 0.86) 100%),
-    linear-gradient(180deg, rgba(8, 5, 17, 0.88) 0%, rgba(13, 9, 22, 0.42) 30%, rgba(13, 9, 22, 0.5) 70%, rgba(8, 5, 17, 0.92) 100%),
+    linear-gradient(180deg, rgba(8, 5, 17, 1) 0%, rgba(8, 5, 17, 0.6) 9%, rgba(13, 9, 22, 0.42) 30%, rgba(13, 9, 22, 0.5) 70%, rgba(8, 5, 17, 0.65) 91%, rgba(8, 5, 17, 1) 100%),
     linear-gradient(180deg, rgba(69, 23, 90, 0.24), rgba(122, 45, 150, 0.16));
 }
 .teaser-inner { position: relative; z-index: 1; }
@@ -1571,8 +1571,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Infos ---------- */
 .infos {
   background:
-    radial-gradient(ellipse 55% 55% at 50% 115%, rgba(122, 45, 150, 0.17), transparent 70%),
-    radial-gradient(ellipse 35% 40% at 4% 10%, rgba(216, 108, 170, 0.07), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 14%, transparent 84%, var(--noir-0) 98%),
+    radial-gradient(ellipse 55% 55% at 50% 92%, rgba(122, 45, 150, 0.15), transparent 70%),
+    radial-gradient(ellipse 35% 40% at 4% 18%, rgba(216, 108, 170, 0.07), transparent 70%),
     var(--noir-0);
 }
 .infos::before {
@@ -1716,8 +1717,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- FAQ ---------- */
 .faq {
   background:
-    radial-gradient(ellipse 50% 45% at 50% 100%, rgba(122, 45, 150, 0.22), transparent 70%),
-    radial-gradient(ellipse 40% 55% at 100% 20%, rgba(69, 23, 90, 0.35), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 15%, transparent 84%, var(--noir-0) 98%),
+    radial-gradient(ellipse 50% 45% at 50% 82%, rgba(122, 45, 150, 0.2), transparent 70%),
+    radial-gradient(ellipse 40% 55% at 100% 28%, rgba(69, 23, 90, 0.35), transparent 70%),
     var(--noir-0);
 }
 .faq-list { margin-top: clamp(2rem, 5vh, 3.5rem); }
@@ -1761,8 +1763,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Réseaux sociaux ---------- */
 .socials {
   background:
-    radial-gradient(ellipse 50% 55% at 80% 20%, rgba(122, 45, 150, 0.2), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 10% 90%, rgba(216, 108, 170, 0.08), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 15%, transparent 84%, var(--noir-0) 98%),
+    radial-gradient(ellipse 50% 55% at 80% 28%, rgba(122, 45, 150, 0.2), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 78%, rgba(216, 108, 170, 0.08), transparent 70%),
     var(--noir-0);
 }
 .socials-lead {
