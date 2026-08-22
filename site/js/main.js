@@ -55,10 +55,16 @@
     });
   }
 
-  /* ---------- Header au scroll ---------- */
+  /* ---------- Header au scroll + barre de progression ---------- */
   const header = document.getElementById("header");
+  const progressBar = document.getElementById("scrollProgress");
   const onScrollHeader = () => {
     header.classList.toggle("scrolled", window.scrollY > 40);
+    if (progressBar) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      progressBar.style.transform = `scaleX(${p.toFixed(4)})`;
+    }
   };
   window.addEventListener("scroll", onScrollHeader, { passive: true });
   onScrollHeader();

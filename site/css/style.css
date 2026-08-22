@@ -95,6 +95,22 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   100% { transform: translate(2%, 2%); }
 }
 
+/* ---------- Barre de progression ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1500;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--champagne-deep), var(--champagne) 55%, var(--champagne-light));
+  box-shadow: 0 0 12px rgba(216, 108, 170, 0.55);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  will-change: transform;
+}
+
 /* ---------- Preloader ---------- */
 .preloader {
   position: fixed;
