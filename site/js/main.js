@@ -264,9 +264,9 @@
 
   /* ---------- Traînées de paillettes au scroll (générique) ---------- */
   // track = élément qui définit la progression au scroll ; host = zone visible où dessiner
-  const initGlitterTrail = (track, host, canvas) => {
+  const initGlitterTrail = (track, host, canvas, colors) => {
     const gctx = canvas.getContext("2d");
-    const COLORS = ["242, 169, 210", "216, 108, 170", "246, 240, 247", "206, 182, 255"];
+    const COLORS = colors || ["242, 169, 210", "216, 108, 170", "246, 240, 247", "206, 182, 255"];
     let gw = 0, gh = 0;
     let particles = [];
     let lastHead = null;
@@ -404,7 +404,9 @@
   if (!reduceMotion) {
     const promiseSection = document.getElementById("promesse");
     const g1 = document.getElementById("glitterCanvas");
-    if (promiseSection && g1) initGlitterTrail(promiseSection, promiseSection, g1);
+    // fond clair : paillettes en tons rose profond / violet
+    if (promiseSection && g1) initGlitterTrail(promiseSection, promiseSection, g1,
+      ["176, 74, 133", "140, 58, 104", "122, 45, 150", "216, 108, 170"]);
     const teaserSection = document.getElementById("apercu");
     const teaserSticky = document.querySelector(".teaser-sticky");
     const g2 = document.getElementById("glitterCanvas2");

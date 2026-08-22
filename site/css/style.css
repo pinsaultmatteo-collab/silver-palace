@@ -29,6 +29,20 @@
   --section-pad: clamp(5rem, 12vh, 9rem);
 }
 
+/* ---------- Sections claires (ivoire rosé) ---------- */
+.light {
+  --ivory: #241a30;
+  --silver: #4a3c58;
+  --muted: #7d6a89;
+  --noir-2: #ffffff;
+  --champagne: #b04a85;
+  --champagne-light: #d86caa;
+  --champagne-deep: #8c3a68;
+  --line: rgba(156, 63, 116, 0.35);
+  --line-soft: rgba(36, 26, 48, 0.14);
+  color: var(--ivory);
+}
+
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -500,6 +514,22 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   z-index: 2;
   mix-blend-mode: screen;
 }
+.promise.light {
+  background:
+    radial-gradient(ellipse 45% 75% at 0% 50%, rgba(216, 108, 170, 0.16), transparent 65%),
+    radial-gradient(ellipse 45% 75% at 100% 50%, rgba(122, 45, 150, 0.1), transparent 65%),
+    #f7eef4;
+}
+.promise.light .promise-word {
+  background: linear-gradient(100deg,
+    var(--champagne-deep) 0%, var(--champagne) 42%,
+    #e9d9e4 50%, #e9d9e4 100%);
+  background-size: 230% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.promise.light .glitter-canvas { mix-blend-mode: normal; }
 .promise-kicker {
   font-size: 0.68rem;
   letter-spacing: 0.55em;
@@ -676,9 +706,10 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ---------- Expérience / Cards 3D ---------- */
 .experience {
   background:
+    linear-gradient(180deg, transparent 78%, var(--noir-0) 96%),
     radial-gradient(ellipse 60% 40% at 50% 0%, rgba(122, 45, 150, 0.35), transparent 70%),
-    radial-gradient(ellipse 35% 45% at 8% 95%, rgba(216, 108, 170, 0.1), transparent 70%),
-    radial-gradient(ellipse 30% 40% at 95% 60%, rgba(69, 23, 90, 0.4), transparent 70%),
+    radial-gradient(ellipse 35% 45% at 8% 70%, rgba(216, 108, 170, 0.1), transparent 70%),
+    radial-gradient(ellipse 30% 40% at 95% 50%, rgba(69, 23, 90, 0.4), transparent 65%),
     var(--noir-0);
 }
 .experience::before {
@@ -885,7 +916,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   overflow: hidden;
   padding: clamp(3rem, 8vh, 5rem) var(--gutter);
   background:
-    radial-gradient(ellipse 50% 60% at 88% 25%, rgba(122, 45, 150, 0.17), transparent 70%),
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 18%),
+    radial-gradient(ellipse 50% 60% at 88% 32%, rgba(122, 45, 150, 0.17), transparent 70%),
     radial-gradient(ellipse 40% 50% at 5% 80%, rgba(155, 45, 110, 0.12), transparent 70%),
     var(--noir-0);
 }
@@ -1218,6 +1250,15 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   bottom: 40%;
   background: linear-gradient(180deg, transparent, rgba(216, 108, 170, 0.18), transparent);
   pointer-events: none;
+}
+.dancers.light {
+  background:
+    radial-gradient(ellipse 45% 60% at 12% 50%, rgba(216, 108, 170, 0.15), transparent 70%),
+    radial-gradient(ellipse 35% 45% at 88% 15%, rgba(122, 45, 150, 0.09), transparent 70%),
+    #f7eef4;
+}
+.dancers.light .dancer-photo {
+  box-shadow: 0 18px 50px rgba(36, 26, 48, 0.18);
 }
 .dancers-wrap {
   display: grid;
@@ -1802,6 +1843,11 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
     radial-gradient(ellipse 40% 90% at 50% 50%, rgba(122, 45, 150, 0.12), transparent 75%),
     var(--noir-0);
   text-align: center;
+}
+.join.light {
+  background:
+    radial-gradient(ellipse 45% 95% at 50% 50%, rgba(216, 108, 170, 0.13), transparent 75%),
+    #f7eef4;
 }
 .join-text {
   font-family: var(--font-serif);
