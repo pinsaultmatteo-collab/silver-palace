@@ -1843,6 +1843,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .join {
   padding: clamp(3rem, 8vh, 5rem) var(--gutter);
   background:
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 25%, transparent 75%, var(--noir-0) 100%),
     radial-gradient(ellipse 40% 90% at 50% 50%, rgba(122, 45, 150, 0.12), transparent 75%),
     var(--noir-0);
   text-align: center;
