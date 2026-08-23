@@ -269,6 +269,64 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .burger.open span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
 .burger.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
 
+/* ---------- Onglet recrutement flottant ---------- */
+.dancer-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 950;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  writing-mode: vertical-rl;
+  padding: 1.2rem 0.7rem;
+  background: rgba(21, 15, 32, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-right: none;
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--champagne-light);
+  opacity: 0;
+  translate: 100% 0;
+  animation: tab-glow 3.2s ease-in-out 2.6s infinite;
+  transition: opacity 0.8s var(--ease-out), translate 0.8s var(--ease-out),
+              background 0.4s, color 0.4s, padding 0.35s var(--ease-out), border-color 0.4s;
+}
+.dancer-tab.on {
+  opacity: 1;
+  translate: 0 0;
+}
+.dancer-tab svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.dancer-tab:hover {
+  background: linear-gradient(160deg, var(--champagne-deep), var(--champagne));
+  color: var(--noir-0);
+  border-color: var(--champagne-light);
+  padding-right: 1rem;
+}
+@keyframes tab-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(216, 108, 170, 0); }
+  50% { box-shadow: -4px 0 26px rgba(216, 108, 170, 0.4); }
+}
+@media (max-width: 560px) {
+  .dancer-tab {
+    top: auto;
+    bottom: 18vh;
+    transform: none;
+    padding: 0.9rem 0.55rem;
+    font-size: 0.6rem;
+  }
+}
+
 /* Mobile menu */
 .mobile-menu {
   position: fixed;
