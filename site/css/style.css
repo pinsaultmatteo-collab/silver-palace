@@ -212,15 +212,23 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   max-width: 1500px;
   margin: 0 auto;
 }
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.75rem;
-  margin-right: auto;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.header-actions {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.7rem;
 }
 .brand-logo {
   height: 52px;
@@ -252,7 +260,18 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .nav-link:hover { color: var(--ivory); }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
-.btn-nav { padding: 0.75rem 1.8rem; font-size: 0.72rem; }
+.btn-nav { padding: 0.75rem 1.5rem; font-size: 0.7rem; }
+.btn-dance {
+  gap: 0.55rem;
+  border-color: var(--line);
+  color: var(--champagne-light);
+}
+.btn-dance svg { width: 13px; height: 13px; flex-shrink: 0; }
+.btn-dance:hover {
+  border-color: var(--champagne);
+  background: rgba(216, 108, 170, 0.1);
+  color: var(--champagne-light);
+}
 
 .burger {
   display: none;
@@ -268,64 +287,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .burger.open span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
 .burger.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
-
-/* ---------- Onglet recrutement flottant ---------- */
-.dancer-tab {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 950;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.7rem;
-  writing-mode: vertical-rl;
-  padding: 1.2rem 0.7rem;
-  background: rgba(21, 15, 32, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-  border-right: none;
-  font-size: 0.66rem;
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--champagne-light);
-  opacity: 0;
-  translate: 100% 0;
-  animation: tab-glow 3.2s ease-in-out 2.6s infinite;
-  transition: opacity 0.8s var(--ease-out), translate 0.8s var(--ease-out),
-              background 0.4s, color 0.4s, padding 0.35s var(--ease-out), border-color 0.4s;
-}
-.dancer-tab.on {
-  opacity: 1;
-  translate: 0 0;
-}
-.dancer-tab svg {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-}
-.dancer-tab:hover {
-  background: linear-gradient(160deg, var(--champagne-deep), var(--champagne));
-  color: var(--noir-0);
-  border-color: var(--champagne-light);
-  padding-right: 1rem;
-}
-@keyframes tab-glow {
-  0%, 100% { box-shadow: 0 0 0 rgba(216, 108, 170, 0); }
-  50% { box-shadow: -4px 0 26px rgba(216, 108, 170, 0.4); }
-}
-@media (max-width: 560px) {
-  .dancer-tab {
-    top: auto;
-    bottom: 18vh;
-    transform: none;
-    padding: 0.9rem 0.55rem;
-    font-size: 0.6rem;
-  }
-}
 
 /* Mobile menu */
 .mobile-menu {
@@ -366,6 +327,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .mobile-menu nav a:nth-child(5) { transition-delay: 0.32s; }
 .mobile-menu nav a:nth-child(6) { transition-delay: 0.38s; }
 .mobile-menu nav a:nth-child(7) { transition-delay: 0.44s; }
+.mobile-menu nav a:nth-child(8) { transition-delay: 0.5s; }
 .mobile-menu nav a:hover { color: var(--champagne-light); }
 .mobile-menu .mobile-cta {
   font-family: var(--font-sans);
@@ -376,6 +338,12 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--champagne);
   padding: 1rem 2.6rem;
   margin-top: 1rem;
+}
+.mobile-menu .mobile-cta-ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--champagne-light);
+  margin-top: 0;
 }
 .mobile-menu-foot {
   display: flex;
@@ -2022,10 +1990,12 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .infos-grid .info-panel:nth-child(3) { transition-delay: 0.24s; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .nav { display: none; }
-  .btn-nav { display: none; }
+  .header-actions { display: none; }
   .burger { display: flex; }
+}
+@media (max-width: 1024px) {
   .grid-2, .grid-reverse { grid-template-columns: 1fr; }
   .grid-reverse .cabaret-visual { order: -1; }
   .cards { grid-template-columns: 1fr; max-width: 540px; margin-inline: auto; }

@@ -55,12 +55,6 @@
     });
   }
 
-  /* ---------- Onglet recrutement : apparition différée ---------- */
-  const dancerTab = document.querySelector(".dancer-tab");
-  if (dancerTab) {
-    setTimeout(() => dancerTab.classList.add("on"), reduceMotion ? 0 : 1500);
-  }
-
   /* ---------- Header au scroll + barre de progression ---------- */
   const header = document.getElementById("header");
   const progressBar = document.getElementById("scrollProgress");
