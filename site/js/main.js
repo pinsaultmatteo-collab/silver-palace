@@ -58,6 +58,43 @@
     });
   }
 
+  /* ---------- Défilement doux vers les ancres ---------- */
+  // Remplace scroll-behavior:smooth (peu fiable sur ancres + très lent sur page longue)
+  const smoothScrollTo = (targetY) => {
+    if (reduceMotion) {
+      window.scrollTo(0, targetY);
+      return;
+    }
+    const startY = window.scrollY;
+    const dist = targetY - startY;
+    if (Math.abs(dist) < 2) return;
+    const dur = Math.min(1100, 450 + Math.abs(dist) * 0.06);
+    const t0 = performance.now();
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      window.scrollTo(0, startY + dist * ease(p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  document.querySelectorAll('a[href*="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+      const path = href.slice(0, hashIndex);
+      // ancre d'une autre page → navigation classique
+      if (path && path !== location.pathname) return;
+      const id = decodeURIComponent(href.slice(hashIndex + 1));
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      e.preventDefault();
+      history.pushState(null, "", "#" + id);
+      smoothScrollTo(target.getBoundingClientRect().top + window.scrollY - 78);
+    });
+  });
+
   /* ---------- Header au scroll + barre de progression ---------- */
   const header = document.getElementById("header");
   const progressBar = document.getElementById("scrollProgress");

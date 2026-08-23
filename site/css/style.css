@@ -47,10 +47,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
 }
+[id] { scroll-margin-top: 84px; }
 
 body {
   background: var(--noir-0);
