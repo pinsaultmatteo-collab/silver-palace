@@ -25,13 +25,16 @@
   /* ---------- Preloader ---------- */
   const preloader = document.getElementById("preloader");
   const hidePreloader = () => {
+    if (!preloader) return;
     preloader.classList.add("done");
     setTimeout(() => preloader.remove(), 1000);
   };
-  if (document.readyState === "complete") hidePreloader();
-  else window.addEventListener("load", () => setTimeout(hidePreloader, 400));
-  // Filet de sécurité si un asset distant traîne
-  setTimeout(hidePreloader, 3500);
+  if (preloader) {
+    if (document.readyState === "complete") hidePreloader();
+    else window.addEventListener("load", () => setTimeout(hidePreloader, 400));
+    // Filet de sécurité si un asset distant traîne
+    setTimeout(hidePreloader, 3500);
+  }
 
   /* ---------- Split du titre héro ---------- */
   const heroDisplay = document.getElementById("heroDisplay");
@@ -781,6 +784,22 @@
     render();
     startAutoplay();
   }
+
+  /* ---------- Formulaires des pages intérieures ---------- */
+  // TODO : brancher sur un backend (Formspree / e-mail du club) avant mise en ligne
+  document.querySelectorAll(".page-form").forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const fields = form.querySelector(".form-fields");
+      const success = form.querySelector(".form-success");
+      if (fields) fields.hidden = true;
+      if (success) success.hidden = false;
+    });
+  });
 
   /* ---------- FAQ : fermer les autres ---------- */
   const faqItems = document.querySelectorAll(".faq-item");
