@@ -17,6 +17,7 @@ site/
 ├── index.html            # Home page (JSON-LD NightClub + FAQPage, OG, geo)
 ├── reservation.html      # + application, events, carte, shows, contact,
 ├── …                     #   about, legal, privacy, 404 (même template)
+├── en/                   # version anglaise (booking, apply, drinks, dances…)
 ├── sitemap.xml / robots.txt / llms.txt
 ├── css/style.css         # Design system complet (palette néon rose/violet)
 ├── js/main.js            # Interactions (scrub épinglé, paillettes, formulaires…)
@@ -39,3 +40,12 @@ npx serve -l 4173 site
 - Compléter les mentions légales (`legal.html` : raison sociale, SIRET, directeur de publication)
 - Valider les noms de scène du carrousel (tableau `DANCERS` dans `main.js`)
 - Remplacer les photos indiquées par la cliente
+- Version espagnole à venir (même mécanique que `/en/`)
+
+## Multilingue
+
+Le site existe en français (racine) et en anglais (`/en/`), avec de vraies pages
+traduites — indexables par Google — reliées par `hreflang`. Les pages anglaises
+sont générées par `scripts/build_i18n.py` à partir des pages françaises et
+d'un dictionnaire de traduction : **après toute modification du contenu français,
+relancer ce script** pour répercuter les changements.

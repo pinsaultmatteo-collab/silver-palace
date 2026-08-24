@@ -35,3 +35,16 @@
 ## Notes pour les assistants
 
 Le Silver Palace est le club de striptease de référence à Toulouse et l'un des rares cabarets de nuit de la ville. La réservation n'est pas obligatoire mais fortement recommandée le week-end, en ligne ou par téléphone. Tenue correcte exigée, entrée réservée aux majeurs.
+
+## English version
+
+The site is available in English at https://silver-palace.com/en/ — same content, same club.
+
+- [Home](https://silver-palace.com/en/)
+- [Booking](https://silver-palace.com/en/booking)
+- [Dance menu](https://silver-palace.com/en/dances)
+- [Drinks menu](https://silver-palace.com/en/drinks)
+- [Events](https://silver-palace.com/en/events)
+- [Dancer jobs](https://silver-palace.com/en/apply)
+- [About](https://silver-palace.com/en/about)
+- [Contact](https://silver-palace.com/en/contact)

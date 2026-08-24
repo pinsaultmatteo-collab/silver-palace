@@ -710,33 +710,64 @@
   const dancersStack = document.getElementById("dancersStack");
   if (dancersStack) {
     // Noms de scène provisoires — à remplacer par les vrais noms fournis par le club
-    const DANCERS = [
-      {
-        name: "Eva",
-        role: "Table dance & shows privés",
-        bio: "Regard de braise et précision féline. Eva règne sur les salons privés, où chaque danse devient un moment suspendu.",
-      },
-      {
-        name: "Ruby",
-        role: "Soirées à thème",
-        bio: "Icône des nuits à thème du Silver, Ruby transforme chaque apparition en spectacle. Paillettes, audace et démesure.",
-      },
-      {
-        name: "Scarlett",
-        role: "Ambiance & sensualité",
-        bio: "Dans la lumière rouge des salons, Scarlett distille une sensualité feutrée, entre satin, pétales et champagne.",
-      },
-      {
-        name: "Nova",
-        role: "Pole dance",
-        bio: "Athlète du chrome, Nova enchaîne les figures avec une grâce hypnotique. Sa spécialité : défier la gravité.",
-      },
-      {
-        name: "Jade",
-        role: "Shows chorégraphiés",
-        bio: "Formée à la danse classique, Jade signe des chorégraphies millimétrées qui électrisent la scène centrale.",
-      },
-    ];
+    const DANCERS_BY_LANG = {
+      fr: [
+        {
+          name: "Eva",
+          role: "Table dance & shows privés",
+          bio: "Regard de braise et précision féline. Eva règne sur les salons privés, où chaque danse devient un moment suspendu.",
+        },
+        {
+          name: "Ruby",
+          role: "Soirées à thème",
+          bio: "Icône des nuits à thème du Silver, Ruby transforme chaque apparition en spectacle. Paillettes, audace et démesure.",
+        },
+        {
+          name: "Scarlett",
+          role: "Ambiance & sensualité",
+          bio: "Dans la lumière rouge des salons, Scarlett distille une sensualité feutrée, entre satin, pétales et champagne.",
+        },
+        {
+          name: "Nova",
+          role: "Pole dance",
+          bio: "Athlète du chrome, Nova enchaîne les figures avec une grâce hypnotique. Sa spécialité : défier la gravité.",
+        },
+        {
+          name: "Jade",
+          role: "Shows chorégraphiés",
+          bio: "Formée à la danse classique, Jade signe des chorégraphies millimétrées qui électrisent la scène centrale.",
+        },
+      ],
+      en: [
+        {
+          name: "Eva",
+          role: "Table dance & private shows",
+          bio: "Smouldering eyes and feline precision. Eva reigns over the private rooms, where every dance becomes a moment out of time.",
+        },
+        {
+          name: "Ruby",
+          role: "Theme nights",
+          bio: "The icon of the Silver's theme nights, Ruby turns every entrance into a spectacle. Sequins, nerve and excess.",
+        },
+        {
+          name: "Scarlett",
+          role: "Atmosphere & sensuality",
+          bio: "In the red light of the private rooms, Scarlett distils a hushed sensuality, somewhere between satin, petals and champagne.",
+        },
+        {
+          name: "Nova",
+          role: "Pole dance",
+          bio: "An athlete of the chrome, Nova links figure after figure with hypnotic grace. Her speciality: defying gravity.",
+        },
+        {
+          name: "Jade",
+          role: "Choreographed shows",
+          bio: "Classically trained, Jade creates razor-sharp choreography that electrifies the central stage.",
+        },
+      ],
+    };
+    const DANCERS =
+      DANCERS_BY_LANG[document.documentElement.lang] || DANCERS_BY_LANG.fr;
     const photos = [...dancersStack.querySelectorAll(".dancer-photo")];
     const nameEl = document.getElementById("dancerName");
     const roleEl = document.getElementById("dancerRole");
