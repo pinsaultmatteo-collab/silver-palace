@@ -2420,6 +2420,14 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .burger { display: flex; }
 }
 @media (max-width: 1024px) {
+  /* Respiration verticale resserrée sur mobile */
+  :root { --section-pad: clamp(2.8rem, 7vh, 4.5rem); }
+  .club { padding-bottom: clamp(2rem, 5vh, 3rem); }
+  .experience { padding-top: clamp(2.2rem, 5vh, 3rem); }
+  .gallery { padding-top: clamp(2.2rem, 5vh, 3rem); }
+  .infos { padding-top: clamp(2.2rem, 5vh, 3rem); }
+  .cabaret-sticky { padding-top: clamp(2.2rem, 5vh, 3rem); }
+
   .grid-2, .grid-reverse { grid-template-columns: 1fr; }
 
   /* Le Club & Le Spectacle : titre → visuel → texte, le tout centré */
@@ -2483,7 +2491,18 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .g-item-tall img { aspect-ratio: 16 / 10; }
 }
 @media (max-width: 560px) {
-  .footer-inner { grid-template-columns: 1fr; }
+  /* Footer : navigation sur deux colonnes, tout centré */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    row-gap: 2.4rem;
+  }
+  .footer-brand, .footer-contact { grid-column: 1 / -1; }
+  .footer-baseline { max-width: 38ch; margin-inline: auto; }
+  .footer-nav { align-items: center; }
+  .footer-nav a:hover { padding-left: 0; color: var(--champagne-light); }
+  .footer-socials { justify-content: center; }
   .brand-name { display: none; }
   .hero-cta .btn { width: 100%; max-width: 320px; }
   .cta-band::before, .cta-band::after { display: none; }
