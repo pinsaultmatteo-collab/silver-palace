@@ -2109,6 +2109,17 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 /* ---------- Carte (menus) ---------- */
 .menu-section { max-width: 860px; margin: 0 auto; }
+.menu-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 clamp(2.5rem, 5vw, 4.5rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .menu-columns { grid-template-columns: 1fr; }
+}
 .menu-cat {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.6vw, 1.9rem);
