@@ -2014,6 +2014,96 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .page-hero .lead { max-width: 640px; }
 .page-hero + .section { padding-top: 0; }
 
+/* Héro de page avec photo */
+.page-hero.has-media {
+  min-height: min(74vh, 680px);
+  display: flex;
+  align-items: center;
+}
+.page-hero.has-media .section-inner { width: 100%; }
+.page-hero.has-media::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.8rem, 1.5vw, 1.4rem);
+  border: 1px solid rgba(216, 108, 170, 0.16);
+  pointer-events: none;
+  z-index: 1;
+}
+.page-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.page-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.68) contrast(1.04);
+}
+.page-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 5, 17, 0.93) 0%, rgba(8, 5, 17, 0.62) 45%, rgba(8, 5, 17, 0.22) 100%),
+    linear-gradient(180deg, rgba(8, 5, 17, 0.8) 0%, transparent 32%, transparent 58%, var(--noir-0) 100%),
+    linear-gradient(180deg, rgba(69, 23, 90, 0.22), rgba(122, 45, 150, 0.12));
+}
+.page-hero.has-media .page-title {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  text-shadow: 0 2px 26px rgba(8, 5, 17, 0.85);
+}
+.page-hero.has-media .lead { text-shadow: 0 1px 18px rgba(8, 5, 17, 0.9); }
+
+/* ---------- Bande citation (manifeste) ---------- */
+.quote-band {
+  position: relative;
+  text-align: center;
+  padding: clamp(4rem, 10vh, 7rem) var(--gutter);
+  background:
+    linear-gradient(180deg, var(--noir-0) 0%, transparent 30%, transparent 70%, var(--noir-0) 100%),
+    radial-gradient(ellipse 45% 80% at 50% 50%, rgba(122, 45, 150, 0.28), transparent 75%),
+    var(--noir-0);
+}
+.quote-band blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  line-height: 1.3;
+  color: var(--silver);
+  max-width: 760px;
+  margin: 0 auto;
+}
+.quote-band blockquote .accent-italic { font-style: italic; }
+.quote-band .quote-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-top: 1.8rem;
+}
+
+/* ---------- Les espaces (page Le Club) ---------- */
+.space-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+}
+.space-grid .frame img { aspect-ratio: 4 / 5; height: auto; }
+.space-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 1.1rem;
+  padding: 0 0.2rem;
+}
+@media (max-width: 900px) {
+  .space-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+}
+
 /* ---------- Formulaires ---------- */
 .form-layout {
   display: grid;
