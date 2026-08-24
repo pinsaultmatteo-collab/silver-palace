@@ -19,6 +19,7 @@ site/
 ├── …                     #   about, legal, privacy, 404 (même template)
 ├── en/                   # version anglaise (booking, apply, drinks, dances…)
 ├── es/                   # version espagnole (reservas, trabajo, bebidas, bailes…)
+├── blog.html + blog/     # blog français (1 article/semaine)
 ├── sitemap.xml / robots.txt / llms.txt
 ├── css/style.css         # Design system complet (palette néon rose/violet)
 ├── js/main.js            # Interactions (scrub épinglé, paillettes, formulaires…)
@@ -58,3 +59,18 @@ python3 scripts/build_i18n.py
 les changements. Il est idempotent et régénère aussi le `sitemap.xml` multilingue.
 Les traductions vivent dans `scripts/i18n_dict.py` (EN), `scripts/i18n_fix.py`
 (EN, pages légales) et `scripts/i18n_es.py` (ES).
+
+## Blog
+
+Blog français uniquement — le référencement local visé se joue en français, et
+trois versions hebdomadaires seraient intenables. Le contenu vit dans
+`scripts/blog_posts.py` ; la stratégie éditoriale et les 24 sujets à venir sont
+dans [CALENDRIER-BLOG.md](CALENDRIER-BLOG.md).
+
+```bash
+python3 scripts/build_blog.py     # régénère l'index, les articles et le sitemap
+```
+
+Chaque article embarque son balisage `BlogPosting`, son fil d'ariane et un bloc
+`FAQPage`. **Lancer `build_i18n.py` avant `build_blog.py`** si les deux sont
+nécessaires : le premier régénère le sitemap, le second y ajoute les URL du blog.

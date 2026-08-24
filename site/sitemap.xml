@@ -301,4 +301,35 @@
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
+  <!-- blog -->
+  <url>
+    <loc>https://silver-palace.com/blog</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://silver-palace.com/blog/devenir-danseuse-cabaret-realite</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silver-palace.com/blog/que-faire-toulouse-apres-minuit</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silver-palace.com/blog/club-striptease-toulouse-premiere-visite</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silver-palace.com/blog/organiser-evg-toulouse</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -66,6 +66,8 @@ def translate_page(skel, slug, lang):
         if fr_slug not in ("index", "404"):
             out = out.replace(f'href="/{fr_slug}"', f'href="/{lang}/{tr_slug}"')
     out = re.sub(r'href="/"(?=[\s>])', f'href="/{lang}"', out)
+    # le blog n'existe qu'en français : on retire l'entrée des autres langues
+    out = re.sub(r'\n\s*<a href="/blog"[^>]*>[^<]*</a>', "", out)
     out = out.replace(f'"{BASE}{url_for("fr", slug)}"', f'"{BASE}{url_for(lang, slug)}"')
     # la home utilise des chemins relatifs, les sous-dossiers ont besoin d'absolus
     out = out.replace('href="css/style.css"', 'href="/css/style.css"')
