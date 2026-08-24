@@ -1,2 +1,5 @@
 .DS_Store
 site/_frames.html
+
+# Vidéos sources (les frames extraites suffisent au site)
+videos/
