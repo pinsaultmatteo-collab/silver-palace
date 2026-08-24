@@ -307,11 +307,33 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transition: opacity 0.5s var(--ease-out), visibility 0.5s;
 }
 .mobile-menu.open { opacity: 1; visibility: visible; }
+.menu-close {
+  position: absolute;
+  top: 1.1rem;
+  right: var(--gutter);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--champagne-light);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: border-color 0.3s, background 0.3s;
+}
+.menu-close:hover {
+  border-color: var(--champagne);
+  background: rgba(216, 108, 170, 0.1);
+}
+.burger.open { opacity: 0; pointer-events: none; }
 .mobile-menu nav {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: clamp(2.2rem, 9vw, 4rem);
+  row-gap: 1.5rem;
+  justify-content: center;
   align-items: center;
-  gap: 1.6rem;
+  justify-items: center;
 }
 .mobile-menu nav a {
   font-family: var(--font-serif);
@@ -340,6 +362,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--champagne);
   padding: 1rem 2.6rem;
   margin-top: 1rem;
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 .mobile-menu .mobile-cta-ghost {
   background: transparent;
@@ -661,6 +685,28 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   margin-bottom: 1.2rem;
 }
 .body { color: var(--muted); margin-bottom: 1.2rem; max-width: 56ch; }
+
+/* Grilles avec titre détaché (Le Club / Le Spectacle) */
+.club-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  grid-template-areas: "visual head" "visual copy";
+  column-gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+.club-head { grid-area: head; align-self: end; }
+.club-grid .club-visual { grid-area: visual; }
+.club-grid .club-copy { grid-area: copy; align-self: start; }
+.cabaret-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-areas: "head visual" "copy visual";
+  column-gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+.cabaret-head { grid-area: head; align-self: end; }
+.cabaret-grid .cabaret-copy { grid-area: copy; align-self: start; }
+.cabaret-grid .cabaret-visual { grid-area: visual; }
 
 /* ---------- Le Club ---------- */
 .club {
@@ -2375,7 +2421,53 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 @media (max-width: 1024px) {
   .grid-2, .grid-reverse { grid-template-columns: 1fr; }
-  .grid-reverse .cabaret-visual { order: -1; }
+
+  /* Le Club & Le Spectacle : titre → visuel → texte, le tout centré */
+  .club-grid, .cabaret-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "head" "visual" "copy";
+    row-gap: clamp(2rem, 5vh, 3rem);
+  }
+  .club-head, .club-grid .club-copy,
+  .cabaret-head, .cabaret-grid .cabaret-copy { text-align: center; }
+  .club-head .kicker, .cabaret-head .kicker { justify-content: center; }
+  .club-head .kicker::after, .cabaret-head .kicker::after {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background: var(--champagne-deep);
+  }
+  .club-grid .body, .cabaret-grid .body,
+  .club-grid .lead, .cabaret-grid .lead { margin-inline: auto; }
+  .cabaret-list {
+    display: inline-block;
+    text-align: left;
+  }
+  .club-curve { display: none; }
+
+  /* Les 3 chiffres du Club sur une seule ligne */
+  .club-stats {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: clamp(1rem, 5vw, 2.2rem);
+  }
+  .club-stats .stat { align-items: center; }
+  .club-stats .stat-num { font-size: clamp(1.05rem, 4.2vw, 1.5rem); white-space: nowrap; }
+  .club-stats .stat-label { font-size: 0.58rem; letter-spacing: 0.16em; white-space: nowrap; }
+
+  /* Le Cercle : contenu centré */
+  .newsletter-copy { text-align: center; }
+  .newsletter-copy .kicker { justify-content: center; }
+  .newsletter-copy .kicker::after {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background: var(--champagne-deep);
+  }
+  .newsletter-copy .body { margin-inline: auto; }
+  .nl-label { text-align: center; }
+  .nl-note { margin-inline: auto; text-align: center; }
+  .nl-success { text-align: center; }
   .cards { grid-template-columns: 1fr; max-width: 540px; margin-inline: auto; }
   .infos-grid { grid-template-columns: 1fr; max-width: 540px; margin-inline: auto; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -2400,10 +2492,68 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .hero-display { font-size: 12.5vw; letter-spacing: 0.04em; }
   .hero-sub { font-size: 1.05rem; }
   .frame-ornament { display: none; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .g-item-tall img { aspect-ratio: 4 / 5; }
+
+  /* Rencontrez-les : bloc compact, flèches visibles sans scroller */
+  .dancers { padding-top: clamp(2.5rem, 7vh, 4rem); padding-bottom: clamp(2.5rem, 7vh, 4rem); }
+  .dancers .h2 { font-size: 1.65rem; margin-bottom: 1rem; }
+  .dancers-wrap { max-width: 240px; margin-top: 1.2rem; gap: 1.1rem; }
+  .dancers-info { min-height: 0; gap: 1rem; padding: 0; }
+  .dancer-name { font-size: 1.55rem; }
+  .dancer-role { margin-top: 0.35rem; padding-bottom: 0.8rem; font-size: 0.64rem; }
+  .dancer-bio { font-size: 1rem; line-height: 1.45; margin-top: 0.8rem; min-height: 0; }
+  .dancers-btn { width: 42px; height: 42px; }
+  /* Galerie : mosaïque compacte 2 colonnes (clic pour agrandir) */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .g-col { display: contents; }
+  .g-item img, .g-sq img, .g-item-tall img { aspect-ratio: 1 / 1; }
+  .g-cap { display: none; }
   .nl-row { flex-direction: column; align-items: stretch; border-bottom: none; padding-bottom: 0; gap: 1.2rem; }
   .nl-row input { border-bottom: 1px solid var(--line); padding-bottom: 0.8rem; }
+}
+
+/* ---------- Lightbox galerie ---------- */
+.g-item { cursor: pointer; }
+.lightbox[hidden] { display: none; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(8, 5, 17, 0.93);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: lightbox-in 0.35s var(--ease-out);
+}
+@keyframes lightbox-in { from { opacity: 0; } }
+.lightbox img {
+  max-width: min(92vw, 900px);
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--line);
+  padding: 0.5rem;
+  background: var(--noir-2);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1.1rem;
+  right: var(--gutter);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--champagne-light);
+  font-size: 1.15rem;
+  z-index: 1;
+  transition: border-color 0.3s, background 0.3s;
+}
+.lightbox-close:hover {
+  border-color: var(--champagne);
+  background: rgba(216, 108, 170, 0.1);
 }
 
 /* ---------- Mode QA (temporaire, captures) ---------- */

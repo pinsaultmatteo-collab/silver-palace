@@ -124,6 +124,8 @@
   mobileMenu.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => toggleMenu(false))
   );
+  const menuClose = document.getElementById("menuClose");
+  if (menuClose) menuClose.addEventListener("click", () => toggleMenu(false));
 
   /* ---------- Reveal au scroll ---------- */
   const revealEls = document.querySelectorAll(".reveal-up, .reveal-scale");
@@ -820,6 +822,31 @@
 
     render();
     startAutoplay();
+  }
+
+  /* ---------- Lightbox galerie ---------- */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lbImg = document.getElementById("lightboxImg");
+    const closeLightbox = () => {
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+    };
+    document.querySelectorAll(".g-item img").forEach((img) => {
+      img.addEventListener("click", () => {
+        lbImg.src = img.currentSrc || img.src;
+        lbImg.alt = img.alt;
+        lightbox.hidden = false;
+        document.body.style.overflow = "hidden";
+      });
+    });
+    lightbox.addEventListener("click", (e) => {
+      if (e.target !== lbImg) closeLightbox();
+    });
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
   }
 
   /* ---------- Formulaires des pages intérieures ---------- */

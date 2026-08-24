@@ -212,6 +212,7 @@
 
   <!-- Menu mobile -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" type="button" aria-label="Fermer le menu">✕</button>
     <nav aria-label="Navigation mobile">
       <a href="/">Accueil</a>
       <a href="/about">Le Club</a>
@@ -294,7 +295,11 @@
         <path id="clubCurvePath" d="M170 0C90 120 40 200 110 320C180 440 60 520 90 640C115 740 170 800 150 900"
               stroke="currentColor" stroke-width="1.2"/>
       </svg>
-      <div class="section-inner grid-2">
+      <div class="section-inner club-grid">
+        <div class="club-head">
+          <p class="kicker reveal-up">Le Club</p>
+          <h2 class="h2 reveal-up">Le club privé le plus <span class="accent-italic">envoûtant</span> de la Ville&nbsp;rose</h2>
+        </div>
         <div class="club-visual" data-depth="0.08">
           <figure class="frame frame-tall reveal-scale" data-tilt>
             <img src="images/fauteuil-baroque-silver-palace-toulouse.jpg"
@@ -305,8 +310,6 @@
           <div class="frame-ornament" aria-hidden="true"></div>
         </div>
         <div class="club-copy">
-          <p class="kicker reveal-up">Le Club</p>
-          <h2 class="h2 reveal-up">Le club privé le plus <span class="accent-italic">envoûtant</span> de la Ville&nbsp;rose</h2>
           <p class="lead reveal-up">Plongez dans un décor somptueux où chaque détail est pensé pour éveiller vos sens. Une ambiance sensuelle et feutrée, des lumières qui caressent les courbes, un service exclusif qui vous place au centre de la nuit.</p>
           <p class="body reveal-up">Le Silver Palace n'est pas seulement un club de striptease à Toulouse : c'est une expérience où luxe, tentation et sophistication se rencontrent. Un verre offert au bar devient le prélude d'une soirée d'exception, dans un cadre aux codes discrets réservé aux connaisseurs.</p>
           <div class="club-stats reveal-up">
@@ -386,10 +389,12 @@
       <div class="cabaret-bg" data-depth="0.12" aria-hidden="true">
         <span class="cabaret-word">Cabaret</span>
       </div>
-      <div class="section-inner grid-2 grid-reverse">
-        <div class="cabaret-copy">
+      <div class="section-inner cabaret-grid">
+        <div class="cabaret-head">
           <p class="kicker reveal-up">Le Spectacle</p>
           <h2 class="h2 reveal-up">Un cabaret <span class="accent-italic">contemporain</span> au cœur de Toulouse</h2>
+        </div>
+        <div class="cabaret-copy">
           <p class="lead reveal-up">Héritier de l'esprit des grands cabarets parisiens, le Silver Palace réinvente la revue à la toulousaine : plumes, paillettes, jeux de lumière et chorégraphies millimétrées.</p>
           <p class="body reveal-up">Chaque semaine, nos danseuses montent sur scène pour des spectacles de cabaret où la sensualité rencontre l'élégance. Un show à Toulouse qui ne ressemble à aucun autre — entre tradition du music-hall et énergie de la nuit.</p>
           <ul class="cabaret-list reveal-up">
@@ -769,6 +774,12 @@
       <p>© 2026 Silver Palace — Club de striptease &amp; cabaret à Toulouse. Tous droits réservés. Interdit aux moins de 18 ans. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
     </div>
   </footer>
+
+  <!-- Lightbox galerie -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer l'aperçu">✕</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
