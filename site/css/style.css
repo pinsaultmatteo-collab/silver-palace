@@ -2055,6 +2055,25 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .page-hero.has-media .lead { text-shadow: 0 1px 18px rgba(8, 5, 17, 0.9); }
 
+/* Variante centrée */
+.page-hero.hero-center { text-align: center; }
+.page-hero.hero-center .breadcrumb { justify-content: center; }
+.page-hero.hero-center .kicker { justify-content: center; }
+.page-hero.hero-center .kicker::after {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: var(--champagne-deep);
+}
+.page-hero.hero-center .page-title,
+.page-hero.hero-center .lead { margin-inline: auto; }
+.page-hero.hero-center .page-hero-media::after {
+  background:
+    radial-gradient(ellipse 68% 95% at 50% 52%, rgba(8, 5, 17, 0.78) 0%, rgba(8, 5, 17, 0.5) 55%, rgba(8, 5, 17, 0.3) 100%),
+    linear-gradient(180deg, rgba(8, 5, 17, 0.8) 0%, transparent 32%, transparent 58%, var(--noir-0) 100%),
+    linear-gradient(180deg, rgba(69, 23, 90, 0.22), rgba(122, 45, 150, 0.12));
+}
+
 /* ---------- Bande citation (manifeste) ---------- */
 .quote-band {
   position: relative;
