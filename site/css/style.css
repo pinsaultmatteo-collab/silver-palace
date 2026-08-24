@@ -260,6 +260,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .nav-link:hover { color: var(--ivory); }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-link.active { color: var(--ivory); }
+.nav-link.active::after { transform: scaleX(1); }
 .btn-nav { padding: 0.75rem 1.5rem; font-size: 0.7rem; }
 .btn-dance {
   gap: 0.55rem;
