@@ -1,82 +1,131 @@
 # -*- coding: utf-8 -*-
-"""Génère la version anglaise du site Silver Palace sous /en/ (moteur corrigé)."""
+"""Génère les versions traduites du site Silver Palace (/en/, /es/).
+
+Les pages françaises sont la source de vérité : après toute modification
+du contenu FR, relancer ce script pour répercuter les traductions.
+
+    python3 scripts/build_i18n.py
+"""
 import os, re, glob, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from i18n_dict import T, SLUGS, SITE
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+SITE = os.path.join(os.path.dirname(HERE), "site")
+
+from i18n_langs import ORDER, SLUGS, switcher, alternates, url_for
+from i18n_dict import T as T_EN
 from i18n_fix import LEGAL
+from i18n_es import T_ES
 
-T.update(LEGAL)
-# variantes avec & brut (titres, og:title) en plus des &amp;
-for k in list(T):
-    if "&amp;" in k:
-        T.setdefault(k.replace("&amp;", "&"), T[k].replace("&amp;", "&"))
-
-OUT = os.path.join(SITE, "en")
+T_EN.update(LEGAL)
+DICTS = {"en": T_EN, "es": T_ES}
+LOCALES = {"en": "en_GB", "es": "es_ES"}
+INLANG = {"en": "en", "es": "es"}
 BASE = "https://silver-palace.com"
 TOKEN = "@@LANGSWITCH@@"
 
-fr_url = lambda s: "/" if s == "index" else "/" + s
-en_url = lambda s: "/en" if SLUGS[s] == "index" else "/en/" + SLUGS[s]
+
+def expand(d):
+    """Ajoute les variantes avec & brut (titres, og:title) aux clés en &amp;."""
+    for k in list(d):
+        if "&amp;" in k:
+            d.setdefault(k.replace("&amp;", "&"), d[k].replace("&amp;", "&"))
+    return d
 
 
-def switcher(slug, active):
-    fr, en = fr_url(slug), en_url(slug)
-    on = ' class="lang-active" aria-current="true"'
-    label = "Choix de la langue" if active == "fr" else "Language"
-    return (f'<div class="lang-switch" role="group" aria-label="{label}">'
-            f'<a href="{fr}" hreflang="fr" lang="fr"{on if active == "fr" else ""}>FR</a>'
-            f'<a href="{en}" hreflang="en" lang="en"{on if active == "en" else ""}>EN</a>'
-            f'</div>')
+def skeleton(raw, slug):
+    """Pose le jeton du sélecteur et les balises hreflang, communs à toutes les langues.
+
+    Idempotent : un sélecteur ou des hreflang déjà présents sont remplacés,
+    pour que le script puisse être relancé sans dupliquer ni figer l'ancien état.
+    """
+    out = raw
+    # repartir d'une page propre
+    out = re.sub(r'\s*<div class="lang-switch".*?</div>', TOKEN, out, flags=re.S)
+    out = re.sub(r'\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">', "", out)
+
+    out = out.replace('<link rel="canonical"', alternates(slug) + '\n  <link rel="canonical"', 1)
+    if TOKEN not in out:
+        out = out.replace('<div class="header-actions">',
+                          f'{TOKEN}\n      <div class="header-actions">', 1)
+        m = re.search(r'\n\s*<a href="[^"]*"[^>]*class="mobile-cta">', out)
+        if m:
+            out = out[:m.start()] + f'\n      {TOKEN}' + out[m.start():]
+    return out
+
+
+def translate_page(skel, slug, lang):
+    """Traduit une page et réécrit ses liens internes vers la langue cible."""
+    d = expand(DICTS[lang])
+    out = skel.replace('<html lang="fr">', f'<html lang="{lang}">', 1)
+    out = out.replace('"inLanguage": "fr-FR"', f'"inLanguage": "{INLANG[lang]}"')
+    out = out.replace('content="fr_FR"', f'content="{LOCALES[lang]}"')
+    for k in sorted(d, key=len, reverse=True):
+        out = out.replace(k, d[k])
+    for fr_slug, tr_slug in SLUGS[lang].items():
+        if fr_slug not in ("index", "404"):
+            out = out.replace(f'href="/{fr_slug}"', f'href="/{lang}/{tr_slug}"')
+    out = re.sub(r'href="/"(?=[\s>])', f'href="/{lang}"', out)
+    out = out.replace(f'"{BASE}{url_for("fr", slug)}"', f'"{BASE}{url_for(lang, slug)}"')
+    # la home utilise des chemins relatifs, les sous-dossiers ont besoin d'absolus
+    out = out.replace('href="css/style.css"', 'href="/css/style.css"')
+    out = out.replace('src="js/main.js"', 'src="/js/main.js"')
+    out = re.sub(r'(src|href)="images/', r'\1="/images/', out)
+    # en dernier : les liens du sélecteur ne doivent pas être réécrits
+    return out.replace(TOKEN, switcher(slug, lang))
 
 
 def build():
-    os.makedirs(OUT, exist_ok=True)
-    done = []
+    counts = {}
     for path in sorted(glob.glob(os.path.join(SITE, "*.html"))):
         slug = os.path.basename(path)[:-5]
-        if slug not in SLUGS:
+        if slug not in SLUGS["en"]:
             continue
-        raw = open(path, encoding="utf-8").read()
-
-        # --- squelette commun : jeton à la place du sélecteur + hreflang
-        alt = (f'<link rel="alternate" hreflang="fr-FR" href="{BASE}{fr_url(slug)}">\n'
-               f'  <link rel="alternate" hreflang="en" href="{BASE}{en_url(slug)}">\n'
-               f'  <link rel="alternate" hreflang="x-default" href="{BASE}{fr_url(slug)}">\n  ')
-        skel = raw
-        if 'hreflang="x-default"' not in skel:
-            skel = skel.replace('<link rel="canonical"', alt + '<link rel="canonical"', 1)
-        if TOKEN not in skel and "lang-switch" not in skel:
-            skel = skel.replace('<div class="header-actions">',
-                                f'{TOKEN}\n      <div class="header-actions">', 1)
-            m = re.search(r'\n\s*<a href="[^"]*"[^>]*class="mobile-cta">', skel)
-            if m:
-                skel = skel[:m.start()] + f'\n      {TOKEN}' + skel[m.start():]
-
-        # --- FR
+        skel = skeleton(open(path, encoding="utf-8").read(), slug)
         open(path, "w", encoding="utf-8").write(skel.replace(TOKEN, switcher(slug, "fr")))
+        for lang in ORDER:
+            if lang == "fr":
+                continue
+            out_dir = os.path.join(SITE, lang)
+            os.makedirs(out_dir, exist_ok=True)
+            name = SLUGS[lang][slug] + ".html"
+            open(os.path.join(out_dir, name), "w", encoding="utf-8").write(
+                translate_page(skel, slug, lang))
+            counts[lang] = counts.get(lang, 0) + 1
+    return counts
 
-        # --- EN : traduire puis relier, le jeton protège le sélecteur
-        en = skel.replace('<html lang="fr">', '<html lang="en">', 1)
-        en = en.replace('"inLanguage": "fr-FR"', '"inLanguage": "en"')
-        en = en.replace('content="fr_FR"', 'content="en_GB"')
-        for k in sorted(T, key=len, reverse=True):
-            en = en.replace(k, T[k])
-        for fr_s, en_s in SLUGS.items():
-            if fr_s not in ("index", "404"):
-                en = en.replace(f'href="/{fr_s}"', f'href="/en/{en_s}"')
-        en = re.sub(r'href="/"(?=[\s>])', 'href="/en"', en)
-        en = en.replace(f'"{BASE}{fr_url(slug)}"', f'"{BASE}{en_url(slug)}"')
-        # chemins relatifs de la home -> absolus (la page vit dans /en/)
-        en = en.replace('href="css/style.css"', 'href="/css/style.css"')
-        en = en.replace('src="js/main.js"', 'src="/js/main.js"')
-        en = re.sub(r'(src|href)="images/', r'\1="/images/', en)
-        # le sélecteur, en dernier : ses liens ne doivent pas être réécrits
-        en = en.replace(TOKEN, switcher(slug, "en"))
-        open(os.path.join(OUT, SLUGS[slug] + ".html"), "w", encoding="utf-8").write(en)
-        done.append(SLUGS[slug])
-    return done
+
+def sitemap():
+    pages = [("index", "weekly", 1.0), ("reservation", "monthly", 0.9),
+             ("shows", "monthly", 0.8), ("carte", "monthly", 0.8),
+             ("events", "weekly", 0.8), ("application", "monthly", 0.7),
+             ("about", "yearly", 0.6), ("contact", "yearly", 0.6),
+             ("legal", "yearly", 0.2), ("privacy", "yearly", 0.2)]
+    codes = {"fr": "fr-FR", "en": "en", "es": "es"}
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+           '        xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for slug, freq, prio in pages:
+        for lang in ORDER:
+            p = prio if lang == "fr" else round(prio - 0.1, 1)
+            out.append("  <url>")
+            out.append(f"    <loc>{BASE}{url_for(lang, slug)}</loc>")
+            for l in ORDER:
+                out.append(f'    <xhtml:link rel="alternate" hreflang="{codes[l]}" '
+                           f'href="{BASE}{url_for(l, slug)}"/>')
+            out.append(f'    <xhtml:link rel="alternate" hreflang="x-default" '
+                       f'href="{BASE}{url_for("fr", slug)}"/>')
+            out.append("    <lastmod>2026-08-24</lastmod>")
+            out.append(f"    <changefreq>{freq}</changefreq>")
+            out.append(f"    <priority>{p}</priority>")
+            out.append("  </url>")
+    out.append("</urlset>")
+    open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+    return len(pages) * len(ORDER)
 
 
 if __name__ == "__main__":
-    d = build()
-    print(f"{len(d)} pages : " + ", ".join(d))
+    c = build()
+    n = sitemap()
+    print(" ".join(f"{lang}: {v} pages" for lang, v in sorted(c.items())))
+    print(f"sitemap : {n} URLs")

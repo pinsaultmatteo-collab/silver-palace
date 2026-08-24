@@ -48,3 +48,16 @@ The site is available in English at https://silver-palace.com/en — same conten
 - [Dancer jobs](https://silver-palace.com/en/apply)
 - [About](https://silver-palace.com/en/about)
 - [Contact](https://silver-palace.com/en/contact)
+
+## Versión en español
+
+El sitio está disponible en español en https://silver-palace.com/es — mismo contenido, mismo club.
+
+- [Inicio](https://silver-palace.com/es)
+- [Reservas](https://silver-palace.com/es/reservas)
+- [Carta de bailes](https://silver-palace.com/es/bailes)
+- [Carta de bebidas](https://silver-palace.com/es/bebidas)
+- [Eventos](https://silver-palace.com/es/eventos)
+- [Trabajo de bailarina](https://silver-palace.com/es/trabajo)
+- [Sobre el club](https://silver-palace.com/es/club)
+- [Contacto](https://silver-palace.com/es/contacto)
