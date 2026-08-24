@@ -4,16 +4,16 @@
   <url>
     <loc>https://silver-palace.com/</loc>
     <xhtml:link rel="alternate" hreflang="fr-FR" href="https://silver-palace.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silver-palace.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silver-palace.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silver-palace.com/"/>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://silver-palace.com/en/</loc>
+    <loc>https://silver-palace.com/en</loc>
     <xhtml:link rel="alternate" hreflang="fr-FR" href="https://silver-palace.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silver-palace.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silver-palace.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silver-palace.com/"/>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>

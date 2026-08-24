@@ -16,7 +16,7 @@ BASE = "https://silver-palace.com"
 TOKEN = "@@LANGSWITCH@@"
 
 fr_url = lambda s: "/" if s == "index" else "/" + s
-en_url = lambda s: "/en/" if SLUGS[s] == "index" else "/en/" + SLUGS[s]
+en_url = lambda s: "/en" if SLUGS[s] == "index" else "/en/" + SLUGS[s]
 
 
 def switcher(slug, active):
@@ -64,7 +64,7 @@ def build():
         for fr_s, en_s in SLUGS.items():
             if fr_s not in ("index", "404"):
                 en = en.replace(f'href="/{fr_s}"', f'href="/en/{en_s}"')
-        en = re.sub(r'href="/"(?=[\s>])', 'href="/en/"', en)
+        en = re.sub(r'href="/"(?=[\s>])', 'href="/en"', en)
         en = en.replace(f'"{BASE}{fr_url(slug)}"', f'"{BASE}{en_url(slug)}"')
         # chemins relatifs de la home -> absolus (la page vit dans /en/)
         en = en.replace('href="css/style.css"', 'href="/css/style.css"')
