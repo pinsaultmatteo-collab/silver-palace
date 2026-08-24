@@ -2335,6 +2335,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1.2rem, 2.5vw, 2rem);
+  /* variante 3 colonnes : voir .event-grid-3 (media queries incluses) */
   margin-top: clamp(2.5rem, 6vh, 4rem);
 }
 .event-card {
@@ -2345,6 +2346,10 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transition: border-color 0.4s, transform 0.4s var(--ease-out);
 }
 .event-card:hover { border-color: var(--line); transform: translateY(-4px); }
+.event-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  .event-grid-3 { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+}
 .event-card .card-num { margin-bottom: 1.4rem; }
 .event-card h3 {
   font-family: var(--font-serif);
@@ -2499,6 +2504,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
     row-gap: 2.4rem;
   }
   .footer-brand, .footer-contact { grid-column: 1 / -1; }
+  .footer-logo-img { margin-inline: auto; }
   .footer-baseline { max-width: 38ch; margin-inline: auto; }
   .footer-nav { align-items: center; }
   .footer-nav a:hover { padding-left: 0; color: var(--champagne-light); }
