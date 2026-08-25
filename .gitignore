@@ -3,3 +3,7 @@ site/_frames.html
 
 # Vidéos sources (les frames extraites suffisent au site)
 videos/
+
+# Cache Python
+__pycache__/
+*.pyc

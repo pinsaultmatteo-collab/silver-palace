@@ -4,6 +4,7 @@
     python3 scripts/build_blog.py            # publie les articles dont la date est atteinte
     python3 scripts/build_blog.py --all      # génère aussi les articles à venir (relecture)
     python3 scripts/build_blog.py --agenda   # liste ce qui est publié et ce qui attend
+    python3 scripts/build_blog.py --dernier  # titre du dernier article publié
 
 PUBLICATION PROGRAMMÉE : chaque article porte une date. Seuls ceux dont la date
 est passée ou atteinte sont écrits sur le site — les autres restent dans le dépôt,
@@ -375,6 +376,11 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     today = datetime.date.today().isoformat()
     everything = sorted(POSTS, key=lambda p: p["date"], reverse=True)
+
+    if "--dernier" in args:
+        live = [p for p in everything if p["date"] <= today]
+        print(live[0]["title"] if live else "")
+        sys.exit(0)
 
     if "--agenda" in args:
         live = [p for p in everything if p["date"] <= today]

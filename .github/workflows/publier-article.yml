@@ -1,11 +1,14 @@
 name: Publier l'article de la semaine
 
-# Chaque mardi à 8h UTC (10h à Toulouse). Le script ne publie que les articles
+# Chaque mardi à 8h UTC (10h à Toulouse). Le script ne génère que les articles
 # dont la date est atteinte : s'il n'y a rien de nouveau, rien n'est poussé.
 on:
   schedule:
     - cron: "0 8 * * 2"
-  workflow_dispatch:      # permet aussi de déclencher à la main depuis GitHub
+  workflow_dispatch:      # bouton « Run workflow » sur GitHub, pour publier à la main
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"   # pas de cache Python dans le dépôt
 
 jobs:
   publier:
@@ -19,19 +22,34 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Compter les articles déjà en ligne
+        id: avant
+        run: echo "n=$(ls site/blog/*.html 2>/dev/null | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
       - name: Générer les articles dont la date est atteinte
         run: python3 scripts/build_blog.py
 
-      - name: Publier s'il y a du nouveau
+      - name: Publier s'il y a un nouvel article
         run: |
+          APRES=$(ls site/blog/*.html 2>/dev/null | wc -l | tr -d ' ')
+          AVANT=${{ steps.avant.outputs.n }}
+
+          # on ne regarde que le site : le reste du dépôt ne doit pas déclencher de commit
+          if [ -z "$(git status --porcelain site/)" ]; then
+            echo "Rien de nouveau cette semaine (${AVANT} articles en ligne)."
+            exit 0
+          fi
+
+          TITRE=$(python3 scripts/build_blog.py --dernier)
           git config user.name "Silver Palace Bot"
           git config user.email "actions@github.com"
-          if [ -n "$(git status --porcelain)" ]; then
-            TITRE=$(python3 scripts/build_blog.py --agenda | sed -n '4p' | sed 's/^ *[0-9-]* *//')
-            git add -A
+          git add site/
+
+          if [ "$APRES" -gt "$AVANT" ]; then
             git commit -m "Publication auto : ${TITRE}"
-            git push
-            echo "Article publié : ${TITRE}"
+            echo "Nouvel article publié : ${TITRE}"
           else
-            echo "Aucun nouvel article cette semaine."
+            git commit -m "Mise à jour du blog"
+            echo "Blog mis à jour (pas de nouvel article)."
           fi
+          git push
