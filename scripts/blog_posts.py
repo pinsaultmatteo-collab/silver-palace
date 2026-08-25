@@ -1,15 +1,26 @@
 # -*- coding: utf-8 -*-
-"""Contenu des articles du blog Silver Palace.
+"""Contenu des articles du blog Silver Palace — 52 articles, un par semaine.
+
+Les articles sont répartis par saison pour rester lisibles :
+    posts_automne.py    sept. - oct. 2026
+    posts_hiver.py      oct. - déc. 2026
+    posts_fetes.py      déc. 2026 - fév. 2027
+    posts_printemps.py  fév. - avril 2027
+    posts_ete1.py       avril - juin 2027
+    posts_ete2.py       juin - juil. 2027
 
 Chaque article vise un cluster de mots-clés distinct (voir CALENDRIER-BLOG.md).
-Pour publier : ajouter une entrée en tête de POSTS puis lancer
-    python3 scripts/build_blog.py
+La date fait office de programmation : seuls les articles dont la date est
+atteinte sont publiés sur le site.
+
+Pour ajouter un article : créer une entrée dans le fichier de la bonne saison,
+puis lancer `python3 scripts/build_blog.py`.
 """
 
 POSTS = [
 {
     "slug": "organiser-evg-toulouse",
-    "date": "2026-08-25",
+    "date": "2026-08-04",
     "category": "Guide",
     "reading": 7,
     "title": "Organiser un EVG à Toulouse : le guide complet",
@@ -73,7 +84,7 @@ POSTS = [
 },
 {
     "slug": "club-striptease-toulouse-premiere-visite",
-    "date": "2026-09-01",
+    "date": "2026-08-11",
     "category": "Les codes",
     "reading": 6,
     "title": "Première visite en club de striptease à Toulouse : les codes à connaître",
@@ -130,7 +141,7 @@ POSTS = [
 },
 {
     "slug": "que-faire-toulouse-apres-minuit",
-    "date": "2026-09-08",
+    "date": "2026-08-18",
     "category": "Ville rose",
     "reading": 6,
     "title": "Que faire à Toulouse après minuit ? Le guide des noctambules",
@@ -186,7 +197,7 @@ POSTS = [
 },
 {
     "slug": "devenir-danseuse-cabaret-realite",
-    "date": "2026-09-15",
+    "date": "2026-08-25",
     "category": "Coulisses",
     "reading": 7,
     "title": "Devenir danseuse en cabaret : ce qu'il faut vraiment savoir",
@@ -242,3 +253,14 @@ POSTS = [
     ],
 },
 ]
+
+# --- Agrégation des articles programmés -------------------------------------
+from posts_automne import POSTS_AUTOMNE
+from posts_hiver import POSTS_HIVER
+from posts_fetes import POSTS_FETES
+from posts_printemps import POSTS_PRINTEMPS
+from posts_ete1 import POSTS_ETE1
+from posts_ete2 import POSTS_ETE2
+
+POSTS = (POSTS + POSTS_AUTOMNE + POSTS_HIVER + POSTS_FETES
+         + POSTS_PRINTEMPS + POSTS_ETE1 + POSTS_ETE2)

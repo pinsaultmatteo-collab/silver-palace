@@ -60,17 +60,28 @@ les changements. Il est idempotent et régénère aussi le `sitemap.xml` multili
 Les traductions vivent dans `scripts/i18n_dict.py` (EN), `scripts/i18n_fix.py`
 (EN, pages légales) et `scripts/i18n_es.py` (ES).
 
-## Blog
+## Blog — 52 articles, publication automatique
 
-Blog français uniquement — le référencement local visé se joue en français, et
-trois versions hebdomadaires seraient intenables. Le contenu vit dans
-`scripts/blog_posts.py` ; la stratégie éditoriale et les 24 sujets à venir sont
-dans [CALENDRIER-BLOG.md](CALENDRIER-BLOG.md).
+Blog français uniquement : le référencement local visé se joue en français, et
+trois versions hebdomadaires seraient intenables pour la cliente.
+
+**Un an de contenu est déjà écrit** (52 articles, du 04/08/2026 au 27/07/2027).
+Chaque article porte une date de publication : le générateur ne produit que ceux
+dont la date est atteinte, les autres restent invisibles dans le dépôt.
+
+Une **action GitHub** (`.github/workflows/publier-article.yml`) relance la
+génération chaque mardi à 10h et pousse le nouvel article — Vercel déploie
+dans la foulée, sans intervention.
 
 ```bash
-python3 scripts/build_blog.py     # régénère l'index, les articles et le sitemap
+python3 scripts/build_blog.py            # publie ce dont la date est atteinte
+python3 scripts/build_blog.py --agenda   # ce qui est en ligne / ce qui attend
+python3 scripts/build_blog.py --all      # tout générer en local pour relecture
 ```
 
-Chaque article embarque son balisage `BlogPosting`, son fil d'ariane et un bloc
-`FAQPage`. **Lancer `build_i18n.py` avant `build_blog.py`** si les deux sont
-nécessaires : le premier régénère le sitemap, le second y ajoute les URL du blog.
+Les textes sont répartis par saison dans `scripts/posts_*.py`. Chaque article
+embarque son balisage `BlogPosting`, son fil d'ariane et un bloc `FAQPage`.
+Programme complet et stratégie : [CALENDRIER-BLOG.md](CALENDRIER-BLOG.md).
+
+⚠️ **Lancer `build_i18n.py` avant `build_blog.py`** si les deux sont nécessaires :
+le premier régénère le sitemap, le second y ajoute les URL du blog.

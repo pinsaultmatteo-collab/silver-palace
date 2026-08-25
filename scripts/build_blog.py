@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 """Génère le blog du Silver Palace : index + articles.
 
-    python3 scripts/build_blog.py
+    python3 scripts/build_blog.py            # publie les articles dont la date est atteinte
+    python3 scripts/build_blog.py --all      # génère aussi les articles à venir (relecture)
+    python3 scripts/build_blog.py --agenda   # liste ce qui est publié et ce qui attend
 
-Le contenu vit dans scripts/blog_posts.py. Ajouter un article = ajouter une
-entrée en tête de POSTS puis relancer ce script.
+PUBLICATION PROGRAMMÉE : chaque article porte une date. Seuls ceux dont la date
+est passée ou atteinte sont écrits sur le site — les autres restent dans le dépôt,
+invisibles, jusqu'à leur semaine. Une action GitHub relance ce script chaque mardi
+et pousse le nouvel article : voir .github/workflows/publier-article.yml
+
+Le contenu vit dans scripts/blog_posts.py.
 """
 import os, re, sys, json, datetime
 
@@ -346,12 +352,63 @@ def inject_sitemap():
     open(path, "w", encoding="utf-8").write(s)
 
 
+def published(posts, today=None):
+    """Articles dont la date de publication est atteinte."""
+    today = today or datetime.date.today().isoformat()
+    return [p for p in posts if p["date"] <= today]
+
+
+def clean_orphans(slugs):
+    """Supprime les pages d'articles qui ne sont plus publiés."""
+    d = os.path.join(SITE, "blog")
+    if not os.path.isdir(d):
+        return 0
+    n = 0
+    for f in os.listdir(d):
+        if f.endswith(".html") and f[:-5] not in slugs:
+            os.remove(os.path.join(d, f))
+            n += 1
+    return n
+
+
 if __name__ == "__main__":
-    posts = sorted(POSTS, key=lambda p: p["date"], reverse=True)
+    args = sys.argv[1:]
+    today = datetime.date.today().isoformat()
+    everything = sorted(POSTS, key=lambda p: p["date"], reverse=True)
+
+    if "--agenda" in args:
+        live = [p for p in everything if p["date"] <= today]
+        soon = [p for p in reversed(everything) if p["date"] > today]
+        print(f"Aujourd'hui : {today}\n")
+        print(f"EN LIGNE ({len(live)})")
+        for p in live[:5]:
+            print(f"  {p['date']}  {p['title'][:62]}")
+        if len(live) > 5:
+            print(f"  … et {len(live) - 5} autres")
+        print(f"\nÀ VENIR ({len(soon)})")
+        for p in soon[:8]:
+            print(f"  {p['date']}  {p['title'][:62]}")
+        if len(soon) > 8:
+            print(f"  … et {len(soon) - 8} autres, jusqu'au {soon[-1]['date']}")
+        sys.exit(0)
+
+    posts = everything if "--all" in args else published(everything)
+    if not posts:
+        print("Aucun article publiable pour l'instant.")
+        sys.exit(0)
+
     POSTS[:] = posts
     build_index()
-    for i, p in enumerate(posts):
+    for p in posts:
         build_post(p, [o for o in posts if o["slug"] != p["slug"]])
+    removed = clean_orphans({p["slug"] for p in posts})
     inject_sitemap()
-    print(f"blog : index + {len(posts)} articles")
+
+    attente = len(everything) - len(posts)
+    print(f"blog : index + {len(posts)} articles publiés")
+    if removed:
+        print(f"{removed} page(s) obsolète(s) supprimée(s)")
+    if attente:
+        prochain = min((p for p in everything if p["date"] > today), key=lambda p: p["date"])
+        print(f"{attente} article(s) en attente — prochain le {prochain['date']}")
     print("sitemap mis à jour")

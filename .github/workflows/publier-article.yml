@@ -1,0 +1,37 @@
+name: Publier l'article de la semaine
+
+# Chaque mardi à 8h UTC (10h à Toulouse). Le script ne publie que les articles
+# dont la date est atteinte : s'il n'y a rien de nouveau, rien n'est poussé.
+on:
+  schedule:
+    - cron: "0 8 * * 2"
+  workflow_dispatch:      # permet aussi de déclencher à la main depuis GitHub
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Générer les articles dont la date est atteinte
+        run: python3 scripts/build_blog.py
+
+      - name: Publier s'il y a du nouveau
+        run: |
+          git config user.name "Silver Palace Bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            TITRE=$(python3 scripts/build_blog.py --agenda | sed -n '4p' | sed 's/^ *[0-9-]* *//')
+            git add -A
+            git commit -m "Publication auto : ${TITRE}"
+            git push
+            echo "Article publié : ${TITRE}"
+          else
+            echo "Aucun nouvel article cette semaine."
+          fi
