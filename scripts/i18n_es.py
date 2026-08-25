@@ -287,6 +287,9 @@ T_ES = {
 "La nuit continue <span class=\"accent-italic\">en ligne</span>":
     "La noche sigue <span class=\"accent-italic\">en línea</span>",
 "Suivez-nous": "Síguenos",
+"Site conçu &amp; développé par": "Sitio diseñado y desarrollado por",
+"Agence digitale &amp; IA · Toulouse": "Agencia digital e IA · Toulouse",
+"PMC Marketing — agence digitale &amp; IA à Toulouse (nouvelle fenêtre)": "PMC Marketing — agencia digital e IA en Toulouse (se abre en una ventana nueva)",
 "Coulisses, soirées à thème, nouvelles danseuses : suivez la vie du club au quotidien.":
     "Entre bastidores, noches temáticas, nuevas bailarinas: sigue el día a día del club.",
 "Danseuse, artiste, performeuse&nbsp;?": "¿Bailarina, artista, performer?",

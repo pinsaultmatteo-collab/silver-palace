@@ -311,6 +311,9 @@ T = {
 "La nuit continue <span class=\"accent-italic\">en ligne</span>":
     "The night carries on <span class=\"accent-italic\">online</span>",
 "Suivez-nous": "Follow us",
+"Site conçu &amp; développé par": "Site designed &amp; built by",
+"Agence digitale &amp; IA · Toulouse": "Digital &amp; AI agency · Toulouse",
+"PMC Marketing — agence digitale &amp; IA à Toulouse (nouvelle fenêtre)": "PMC Marketing — digital &amp; AI agency in Toulouse (opens in a new window)",
 "Coulisses, soirées à thème, nouvelles danseuses : suivez la vie du club au quotidien.":
     "Backstage, theme nights, new dancers: follow the club's daily life.",
 "Danseuse, artiste, performeuse&nbsp;?": "Dancer, artist, performer?",

@@ -2599,6 +2599,66 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .menu-item-desc { white-space: normal; width: 100%; order: 3; }
 }
 
+
+/* ---------- Signature agence (PMC Marketing) ---------- */
+.made-by {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(1.2rem, 4vw, 2.6rem);
+  padding: 1.6rem var(--gutter);
+  margin-inline: calc(var(--gutter) * -1);
+  background: #14161f;
+  border-top: 1px solid rgba(124, 58, 237, 0.18);
+}
+.made-by-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #6b7280;
+  white-space: nowrap;
+}
+.made-by-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 100%;
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+.made-by-brand:hover { opacity: 0.82; transform: translateY(-1px); }
+.pmc-mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: block;
+}
+.pmc-txt { display: flex; flex-direction: column; gap: 0.18rem; min-width: 0; }
+.pmc-name {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.pmc-dot { color: #7C3AED; }
+.pmc-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  line-height: 1;
+}
+@media (max-width: 560px) {
+  .made-by { flex-direction: column; gap: 1rem; text-align: center; }
+  .made-by-label { font-size: 0.6rem; letter-spacing: 0.22em; white-space: normal; }
+  .made-by-brand { gap: 0.7rem; max-width: 100%; }
+  .pmc-mark { width: 30px; height: 30px; }
+  .pmc-name { font-size: 0.98rem; }
+  .pmc-tag { font-size: 0.55rem; letter-spacing: 0.13em; }
+}
+
 /* ---------- Reveal animations ---------- */
 .reveal-up, .reveal-scale {
   opacity: 0;
