@@ -2609,8 +2609,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   gap: clamp(1.2rem, 4vw, 2.6rem);
   padding: 1.6rem var(--gutter);
   margin-inline: calc(var(--gutter) * -1);
-  background: #14161f;
-  border-top: 1px solid rgba(124, 58, 237, 0.18);
+  background: transparent;
+  border-top: 1px solid var(--line-soft);
 }
 .made-by-label {
   font-size: 0.68rem;
