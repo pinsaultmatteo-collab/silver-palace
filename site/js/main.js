@@ -513,21 +513,82 @@
     }
   }
 
+  /* ---------- Envoi des formulaires ---------- */
+  // Les données partent sur /api/form (fonction Vercel → Brevo, serveurs UE).
+  const ERREURS = {
+    fr: {
+      reseau: "Envoi impossible. Vérifiez votre connexion, ou appelez-nous au 05 62 84 51 69.",
+      champ: "Merci de compléter les champs obligatoires.",
+      email: "Cette adresse e-mail ne semble pas valide.",
+    },
+    en: {
+      reseau: "Could not send. Check your connection, or call us on +33 5 62 84 51 69.",
+      champ: "Please fill in the required fields.",
+      email: "This email address doesn't look valid.",
+    },
+    es: {
+      reseau: "No se ha podido enviar. Comprueba tu conexión o llámanos al +33 5 62 84 51 69.",
+      champ: "Por favor, completa los campos obligatorios.",
+      email: "Esta dirección de correo no parece válida.",
+    },
+  };
+  const messages = () => ERREURS[document.documentElement.lang] || ERREURS.fr;
+
+  async function envoyer(form, type) {
+    const data = { type };
+    new FormData(form).forEach((v, k) => { data[k] = v; });
+    const r = await fetch("/api/form", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    let corps = {};
+    try { corps = await r.json(); } catch (_) { /* réponse illisible */ }
+    if (r.ok && corps.ok) return;
+    const err = new Error(corps.erreur || "reseau");
+    err.type = corps.erreur === "email" ? "email"
+             : r.status === 400 ? "champ" : "reseau";
+    throw err;
+  }
+
+  // Affiche l'erreur sous le bouton plutôt que de faire croire au succès.
+  function afficherErreur(form, cle) {
+    let box = form.querySelector(".form-error");
+    if (!box) {
+      box = document.createElement("p");
+      box.className = "form-error";
+      box.setAttribute("role", "alert");
+      const btn = form.querySelector("[type='submit']");
+      (btn && btn.parentNode ? btn.parentNode : form).insertBefore(box, btn ? btn.nextSibling : null);
+    }
+    box.textContent = messages()[cle] || messages().reseau;
+    box.hidden = false;
+  }
+
   /* ---------- Newsletter ---------- */
   const nlForm = document.getElementById("newsletterForm");
   if (nlForm) {
-    nlForm.addEventListener("submit", (e) => {
+    nlForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const email = nlForm.querySelector("input[type='email']");
       if (!email.checkValidity()) {
         email.reportValidity();
         return;
       }
-      // TODO: brancher sur la plateforme e-mailing du client (Brevo / Mailchimp)
-      nlForm.querySelector(".nl-row").style.display = "none";
-      nlForm.querySelector(".nl-note").hidden = true;
-      nlForm.querySelector(".nl-label").hidden = true;
-      nlForm.querySelector(".nl-success").hidden = false;
+      const btn = nlForm.querySelector("[type='submit']");
+      if (btn) btn.disabled = true;
+      const err = nlForm.querySelector(".form-error");
+      if (err) err.hidden = true;
+      try {
+        await envoyer(nlForm, "newsletter");
+        nlForm.querySelector(".nl-row").style.display = "none";
+        nlForm.querySelector(".nl-note").hidden = true;
+        nlForm.querySelector(".nl-label").hidden = true;
+        nlForm.querySelector(".nl-success").hidden = false;
+      } catch (ex) {
+        afficherErreur(nlForm, ex.type);
+        if (btn) btn.disabled = false;
+      }
     });
   }
 
@@ -881,18 +942,28 @@
   }
 
   /* ---------- Formulaires des pages intérieures ---------- */
-  // TODO : brancher sur un backend (Formspree / e-mail du club) avant mise en ligne
   document.querySelectorAll(".page-form").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      const fields = form.querySelector(".form-fields");
-      const success = form.querySelector(".form-success");
-      if (fields) fields.hidden = true;
-      if (success) success.hidden = false;
+      const btn = form.querySelector("[type='submit']");
+      const libelle = btn ? btn.textContent : "";
+      const err = form.querySelector(".form-error");
+      if (err) err.hidden = true;
+      if (btn) { btn.disabled = true; btn.textContent = "…"; }
+      try {
+        await envoyer(form, form.dataset.form);
+        const fields = form.querySelector(".form-fields");
+        const success = form.querySelector(".form-success");
+        if (fields) fields.hidden = true;
+        if (success) success.hidden = false;
+      } catch (ex) {
+        afficherErreur(form, ex.type);
+        if (btn) { btn.disabled = false; btn.textContent = libelle; }
+      }
     });
   });
 
