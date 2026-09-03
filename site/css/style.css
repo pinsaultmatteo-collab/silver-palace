@@ -2873,13 +2873,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: rgba(216, 108, 170, 0.1);
 }
 
-/* ---------- Mode QA (temporaire, captures) ---------- */
-.qa .preloader { display: none; }
-.qa .reveal-up, .qa .reveal-scale { opacity: 1; transform: none; filter: none; transition: none; }
-.qa .hero-display .ch { opacity: 1; transform: none; animation: none; }
-.qa .grain { display: none; }
-.qa .promise-word { background-position: 18% 0; }
-
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -5,19 +5,6 @@
 (() => {
   "use strict";
 
-  // [QA temporaire — retirer avant mise en ligne]
-  const qaTarget = new URLSearchParams(location.search).get("s");
-  if (qaTarget) {
-    document.documentElement.classList.add("qa");
-    document.documentElement.style.scrollBehavior = "auto";
-    const jump = () => {
-      const t = document.getElementById(qaTarget);
-      if (t) document.body.style.transform = `translateY(${-t.offsetTop}px)`;
-    };
-    document.addEventListener("DOMContentLoaded", jump);
-    window.addEventListener("load", jump);
-  }
-
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
   const lerp = (a, b, t) => a + (b - a) * t;
