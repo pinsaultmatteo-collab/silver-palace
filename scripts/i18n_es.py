@@ -553,8 +553,8 @@ T_ES.update({
     "<strong>Contacto</strong>: nombre, correo electrónico, mensaje;",
 "<strong>Newsletter</strong> : adresse e-mail.":
     "<strong>Newsletter</strong>: dirección de correo electrónico.",
-"Ce site dépose un cookie de mesure d'audience uniquement après votre accord — voir la section « Cookies » ci-dessous.":
-    "Este sitio solo instala una cookie de medición de audiencia si das tu consentimiento — consulta la sección «Cookies» más abajo.",
+"Ce site utilise un cookie de mesure d'audience — voir la section « Cookies » ci-dessous.":
+    "Este sitio utiliza una cookie de medición de audiencia — consulta la sección «Cookies» más abajo.",
 "Finalités": "Finalidades",
 "Ces données servent exclusivement à traiter votre demande : confirmer une réservation, répondre à un message, étudier une candidature ou vous adresser nos invitations si vous y avez consenti. Elles ne sont jamais vendues ni transmises à des tiers.":
     "Estos datos se usan exclusivamente para atender tu solicitud: confirmar una reserva, responder a un mensaje, estudiar una candidatura o enviarte nuestras invitaciones si lo has consentido. Nunca se venden ni se ceden a terceros.",
@@ -572,9 +572,9 @@ T_ES.update({
 # ---- Brevo (formularios) + Google Analytics (cookies)
 "Les formulaires du site sont traités par <strong>Brevo</strong> (Sendinblue SAS, société française), qui achemine les messages vers nos boîtes e-mail et héberge la liste de diffusion de la newsletter. Les données restent hébergées dans l'Union européenne et ne font l'objet d'aucun transfert hors UE. Le site est hébergé par Vercel.":
     "Los formularios del sitio son gestionados por <strong>Brevo</strong> (Sendinblue SAS, empresa francesa), que encamina los mensajes a nuestro buzón y aloja la lista de difusión de la newsletter. Los datos permanecen alojados en la Unión Europea y no son objeto de ninguna transferencia fuera de la UE. El sitio está alojado por Vercel.",
-"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site. Il n'est déposé qu'après votre accord explicite, donné via le bandeau affiché lors de votre première visite. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
-    "Este sitio utiliza una única cookie de medición de audiencia (Google Analytics), destinada a entender cómo se visita el sitio. Solo se instala tras tu consentimiento explícito, dado a través del banner que aparece en tu primera visita. No se utiliza ninguna cookie publicitaria, ninguna herramienta de retargeting ni ningún cruce de datos entre sitios.",
-"Les données collectées (pages consultées, provenance, type d'appareil) sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez à tout moment refuser ou retirer votre consentement.":
-    "Los datos recogidos (páginas vistas, procedencia, tipo de dispositivo) se transmiten a Google LLC (Estados Unidos), en el marco del Data Privacy Framework UE-EE. UU. Puedes rechazar o retirar tu consentimiento en cualquier momento.",
-"Gérer mes préférences de cookies": "Gestionar mis preferencias de cookies",
+"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site : pages consultées, provenance, type d'appareil. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
+    "Este sitio utiliza una única cookie de medición de audiencia (Google Analytics), destinada a entender cómo se visita el sitio: páginas vistas, procedencia, tipo de dispositivo. No se utiliza ninguna cookie publicitaria, ninguna herramienta de retargeting ni ningún cruce de datos entre sitios.",
+"Ces données sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez vous opposer à cette mesure d'audience en activant le refus de suivi de votre navigateur, en utilisant un bloqueur, ou en installant le":
+    "Estos datos se transmiten a Google LLC (Estados Unidos), en el marco del Data Privacy Framework UE-EE. UU. Puedes oponerte a esta medición de audiencia activando el rechazo de seguimiento de tu navegador, usando un bloqueador o instalando el",
+"module de désactivation de Google Analytics": "complemento de inhabilitación de Google Analytics",
 })

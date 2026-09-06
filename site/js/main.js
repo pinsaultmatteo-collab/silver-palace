@@ -23,14 +23,10 @@
     setTimeout(hidePreloader, 3500);
   }
 
-  /* ---------- Mesure d'audience (Google Analytics) + consentement ---------- */
-  // Aucune requête vers Google tant que la visiteuse n'a pas cliqué "Accepter" :
-  // ni dataLayer, ni script gtag.js chargés avant l'accord explicite.
+  /* ---------- Mesure d'audience (Google Analytics) ---------- */
   const GA_ID = "G-XZMZK5YCFC";
-  const CONSENT_KEY = "sp-consent";
 
-  function chargerGA() {
-    if (window.gtag) return;
+  (function chargerGA() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     const s = document.createElement("script");
@@ -39,71 +35,7 @@
     document.head.appendChild(s);
     gtag("js", new Date());
     gtag("config", GA_ID);
-  }
-
-  const CONSENT_TXT = {
-    fr: {
-      texte: "Nous utilisons des cookies de mesure d'audience pour comprendre comment le site est utilisé. Aucune donnée n'est partagée à des fins publicitaires.",
-      accepter: "Accepter",
-      refuser: "Refuser",
-      savoir: "En savoir plus",
-      lien: "/privacy",
-    },
-    en: {
-      texte: "We use audience-measurement cookies to understand how the site is used. No data is shared for advertising purposes.",
-      accepter: "Accept",
-      refuser: "Decline",
-      savoir: "Learn more",
-      lien: "/en/privacy",
-    },
-    es: {
-      texte: "Utilizamos cookies de medición de audiencia para entender cómo se usa el sitio. Ningún dato se comparte con fines publicitarios.",
-      accepter: "Aceptar",
-      refuser: "Rechazar",
-      savoir: "Saber más",
-      lien: "/es/privacidad",
-    },
-  };
-  const consentTxt = () => CONSENT_TXT[document.documentElement.lang] || CONSENT_TXT.fr;
-
-  function afficherBanniereCookies() {
-    if (document.getElementById("cookieBanner")) return;
-    const t = consentTxt();
-    const banniere = document.createElement("div");
-    banniere.id = "cookieBanner";
-    banniere.className = "cookie-banner";
-    banniere.setAttribute("role", "dialog");
-    banniere.setAttribute("aria-label", "Cookies");
-    banniere.innerHTML =
-      "<p>" + t.texte + ' <a href="' + t.lien + '">' + t.savoir + "</a></p>" +
-      '<div class="cookie-actions">' +
-      '<button type="button" class="btn btn-ghost" data-consent="refuser">' + t.refuser + "</button>" +
-      '<button type="button" class="btn btn-gold" data-consent="accepter">' + t.accepter + "</button>" +
-      "</div>";
-    document.body.appendChild(banniere);
-    banniere.addEventListener("click", (e) => {
-      const bouton = e.target.closest("[data-consent]");
-      if (!bouton) return;
-      const accord = bouton.dataset.consent === "accepter";
-      try { localStorage.setItem(CONSENT_KEY, accord ? "accorde" : "refuse"); } catch (_) { /* stockage indisponible */ }
-      if (accord) chargerGA();
-      banniere.remove();
-    });
-  }
-
-  try {
-    const consentement = localStorage.getItem(CONSENT_KEY);
-    if (consentement === "accorde") chargerGA();
-    else if (consentement !== "refuse") afficherBanniereCookies();
-  } catch (_) { /* navigation privée : pas de bannière, pas de suivi */ }
-
-  // Reprise du choix depuis la politique de confidentialité.
-  window.gererCookiesConsentement = () => {
-    try { localStorage.removeItem(CONSENT_KEY); } catch (_) { /* ignoré */ }
-    const ancienne = document.getElementById("cookieBanner");
-    if (ancienne) ancienne.remove();
-    afficherBanniereCookies();
-  };
+  })();
 
   /* ---------- Split du titre héro ---------- */
   const heroDisplay = document.getElementById("heroDisplay");

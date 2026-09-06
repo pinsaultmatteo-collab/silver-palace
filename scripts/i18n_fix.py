@@ -40,8 +40,8 @@ LEGAL = {
     "<strong>Contact</strong>: name, email, message;",
 "<strong>Newsletter</strong> : adresse e-mail.":
     "<strong>Newsletter</strong>: email address.",
-"Ce site dépose un cookie de mesure d'audience uniquement après votre accord — voir la section « Cookies » ci-dessous.":
-    "This site sets an audience-measurement cookie only after your consent — see the \u201cCookies\u201d section below.",
+"Ce site utilise un cookie de mesure d'audience — voir la section « Cookies » ci-dessous.":
+    "This site uses an audience-measurement cookie — see the \u201cCookies\u201d section below.",
 "Finalités": "Purposes",
 "Ces données servent exclusivement à traiter votre demande : confirmer une réservation, répondre à un message, étudier une candidature ou vous adresser nos invitations si vous y avez consenti. Elles ne sont jamais vendues ni transmises à des tiers.":
     "This data is used solely to handle your request: confirming a booking, replying to a message, reviewing an application or sending you our invitations if you have consented. It is never sold or passed to third parties.",
@@ -59,10 +59,10 @@ LEGAL = {
 # ---- Brevo (formulaires) + Google Analytics (cookies)
 "Les formulaires du site sont traités par <strong>Brevo</strong> (Sendinblue SAS, société française), qui achemine les messages vers nos boîtes e-mail et héberge la liste de diffusion de la newsletter. Les données restent hébergées dans l'Union européenne et ne font l'objet d'aucun transfert hors UE. Le site est hébergé par Vercel.":
     "The site's forms are processed by <strong>Brevo</strong> (Sendinblue SAS, a French company), which routes messages to our inbox and hosts the newsletter mailing list. The data stays hosted within the European Union and is never transferred outside the EU. The site is hosted by Vercel.",
-"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site. Il n'est déposé qu'après votre accord explicite, donné via le bandeau affiché lors de votre première visite. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
-    "This site uses a single audience-measurement cookie (Google Analytics), used to understand how the site is visited. It is only set after your explicit consent, given via the banner shown on your first visit. No advertising cookie, no retargeting tool and no cross-site data matching are used.",
-"Les données collectées (pages consultées, provenance, type d'appareil) sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez à tout moment refuser ou retirer votre consentement.":
-    "The data collected (pages viewed, referrer, device type) is sent to Google LLC (United States), under the EU\u2013US Data Privacy Framework. You can refuse or withdraw your consent at any time.",
-"Gérer mes préférences de cookies": "Manage my cookie preferences",
+"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site : pages consultées, provenance, type d'appareil. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
+    "This site uses a single audience-measurement cookie (Google Analytics), used to understand how the site is visited: pages viewed, referrer, device type. No advertising cookie, no retargeting tool and no cross-site data matching are used.",
+"Ces données sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez vous opposer à cette mesure d'audience en activant le refus de suivi de votre navigateur, en utilisant un bloqueur, ou en installant le":
+    "This data is sent to Google LLC (United States), under the EU\u2013US Data Privacy Framework. You can object to this audience measurement by turning on your browser's do-not-track setting, using a blocker, or installing the",
+"module de désactivation de Google Analytics": "Google Analytics opt-out add-on",
 "Informations": "Information",
 }
