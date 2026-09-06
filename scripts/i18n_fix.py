@@ -5,9 +5,8 @@ LEGAL = {
 "Les informations légales relatives au site silver-palace.com et à son éditeur.":
     "Legal information about the silver-palace.com website and its publisher.",
 "Éditeur du site": "Site publisher",
-"[Raison sociale à compléter]": "[Company name to be completed]",
-"SIRET : [à compléter] — Directeur de la publication : [à compléter]":
-    "Company number: [to be completed] — Publication director: [to be completed]",
+"SIRET :": "Company registration number (SIRET):",
+"Directrice de la publication :": "Publication director:",
 "Téléphone :": "Phone:",
 "Hébergement": "Hosting",
 "Ce site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis —":
@@ -41,8 +40,8 @@ LEGAL = {
     "<strong>Contact</strong>: name, email, message;",
 "<strong>Newsletter</strong> : adresse e-mail.":
     "<strong>Newsletter</strong>: email address.",
-"Ce site n'utilise aucun cookie publicitaire ni outil de traçage tiers.":
-    "This site uses no advertising cookies and no third-party tracking tools.",
+"Ce site dépose un cookie de mesure d'audience uniquement après votre accord — voir la section « Cookies » ci-dessous.":
+    "This site sets an audience-measurement cookie only after your consent — see the \u201cCookies\u201d section below.",
 "Finalités": "Purposes",
 "Ces données servent exclusivement à traiter votre demande : confirmer une réservation, répondre à un message, étudier une candidature ou vous adresser nos invitations si vous y avez consenti. Elles ne sont jamais vendues ni transmises à des tiers.":
     "This data is used solely to handle your request: confirming a booking, replying to a message, reviewing an application or sending you our invitations if you have consented. It is never sold or passed to third parties.",
@@ -54,7 +53,16 @@ LEGAL = {
     "Under the GDPR, you have the right to access, rectify, erase, object to and port your data. To exercise it, write to us at",
 ". Vous pouvez également saisir la CNIL (": ". You may also contact the French data protection authority, the CNIL (",
 "Services tiers": "Third-party services",
-"Ce site intègre une carte Google Maps et des polices Google Fonts, susceptibles de collecter des données techniques (adresse IP) lors du chargement. Les vidéos de présentation sont hébergées sur Cloudinary. Consultez les politiques de confidentialité de ces services pour en savoir plus.":
-    "This site embeds a Google Maps map and Google Fonts typefaces, which may collect technical data (IP address) when loading. The presentation videos are hosted on Cloudinary. See those services' privacy policies to find out more.",
+"Ce site intègre par ailleurs une carte Google Maps et des polices Google Fonts, susceptibles de collecter des données techniques (adresse IP) lors du chargement. Les vidéos de présentation sont hébergées sur Cloudinary. Consultez les politiques de confidentialité de ces services pour en savoir plus.":
+    "This site also embeds a Google Maps map and Google Fonts typefaces, which may collect technical data (IP address) when loading. The presentation videos are hosted on Cloudinary. See those services' privacy policies to find out more.",
+
+# ---- Brevo (formulaires) + Google Analytics (cookies)
+"Les formulaires du site sont traités par <strong>Brevo</strong> (Sendinblue SAS, société française), qui achemine les messages vers nos boîtes e-mail et héberge la liste de diffusion de la newsletter. Les données restent hébergées dans l'Union européenne et ne font l'objet d'aucun transfert hors UE. Le site est hébergé par Vercel.":
+    "The site's forms are processed by <strong>Brevo</strong> (Sendinblue SAS, a French company), which routes messages to our inbox and hosts the newsletter mailing list. The data stays hosted within the European Union and is never transferred outside the EU. The site is hosted by Vercel.",
+"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site. Il n'est déposé qu'après votre accord explicite, donné via le bandeau affiché lors de votre première visite. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
+    "This site uses a single audience-measurement cookie (Google Analytics), used to understand how the site is visited. It is only set after your explicit consent, given via the banner shown on your first visit. No advertising cookie, no retargeting tool and no cross-site data matching are used.",
+"Les données collectées (pages consultées, provenance, type d'appareil) sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez à tout moment refuser ou retirer votre consentement.":
+    "The data collected (pages viewed, referrer, device type) is sent to Google LLC (United States), under the EU\u2013US Data Privacy Framework. You can refuse or withdraw your consent at any time.",
+"Gérer mes préférences de cookies": "Manage my cookie preferences",
 "Informations": "Information",
 }

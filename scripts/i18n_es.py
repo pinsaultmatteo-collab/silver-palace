@@ -518,9 +518,8 @@ T_ES.update({
 "Les informations légales relatives au site silver-palace.com et à son éditeur.":
     "Información legal sobre el sitio silver-palace.com y su editor.",
 "Éditeur du site": "Editor del sitio",
-"[Raison sociale à compléter]": "[Razón social por completar]",
-"SIRET : [à compléter] — Directeur de la publication : [à compléter]":
-    "CIF: [por completar] — Director de publicación: [por completar]",
+"SIRET :": "Número de registro (SIRET):",
+"Directrice de la publication :": "Directora de publicación:",
 "Téléphone :": "Teléfono:",
 "Hébergement": "Alojamiento",
 "Ce site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis —":
@@ -554,8 +553,8 @@ T_ES.update({
     "<strong>Contacto</strong>: nombre, correo electrónico, mensaje;",
 "<strong>Newsletter</strong> : adresse e-mail.":
     "<strong>Newsletter</strong>: dirección de correo electrónico.",
-"Ce site n'utilise aucun cookie publicitaire ni outil de traçage tiers.":
-    "Este sitio no utiliza cookies publicitarias ni herramientas de rastreo de terceros.",
+"Ce site dépose un cookie de mesure d'audience uniquement après votre accord — voir la section « Cookies » ci-dessous.":
+    "Este sitio solo instala una cookie de medición de audiencia si das tu consentimiento — consulta la sección «Cookies» más abajo.",
 "Finalités": "Finalidades",
 "Ces données servent exclusivement à traiter votre demande : confirmer une réservation, répondre à un message, étudier une candidature ou vous adresser nos invitations si vous y avez consenti. Elles ne sont jamais vendues ni transmises à des tiers.":
     "Estos datos se usan exclusivamente para atender tu solicitud: confirmar una reserva, responder a un mensaje, estudiar una candidatura o enviarte nuestras invitaciones si lo has consentido. Nunca se venden ni se ceden a terceros.",
@@ -567,6 +566,15 @@ T_ES.update({
     "Conforme al RGPD, tienes derecho de acceso, rectificación, supresión, oposición y portabilidad sobre tus datos. Para ejercerlo, escríbenos a",
 ". Vous pouvez également saisir la CNIL (": ". También puedes dirigirte a la autoridad francesa de protección de datos, la CNIL (",
 "Services tiers": "Servicios de terceros",
-"Ce site intègre une carte Google Maps et des polices Google Fonts, susceptibles de collecter des données techniques (adresse IP) lors du chargement. Les vidéos de présentation sont hébergées sur Cloudinary. Consultez les politiques de confidentialité de ces services pour en savoir plus.":
-    "Este sitio integra un mapa de Google Maps y tipografías de Google Fonts, que pueden recoger datos técnicos (dirección IP) al cargarse. Los vídeos de presentación están alojados en Cloudinary. Consulta las políticas de privacidad de estos servicios para saber más.",
+"Ce site intègre par ailleurs une carte Google Maps et des polices Google Fonts, susceptibles de collecter des données techniques (adresse IP) lors du chargement. Les vidéos de présentation sont hébergées sur Cloudinary. Consultez les politiques de confidentialité de ces services pour en savoir plus.":
+    "Este sitio integra además un mapa de Google Maps y tipografías de Google Fonts, que pueden recoger datos técnicos (dirección IP) al cargarse. Los vídeos de presentación están alojados en Cloudinary. Consulta las políticas de privacidad de estos servicios para saber más.",
+
+# ---- Brevo (formularios) + Google Analytics (cookies)
+"Les formulaires du site sont traités par <strong>Brevo</strong> (Sendinblue SAS, société française), qui achemine les messages vers nos boîtes e-mail et héberge la liste de diffusion de la newsletter. Les données restent hébergées dans l'Union européenne et ne font l'objet d'aucun transfert hors UE. Le site est hébergé par Vercel.":
+    "Los formularios del sitio son gestionados por <strong>Brevo</strong> (Sendinblue SAS, empresa francesa), que encamina los mensajes a nuestro buzón y aloja la lista de difusión de la newsletter. Los datos permanecen alojados en la Unión Europea y no son objeto de ninguna transferencia fuera de la UE. El sitio está alojado por Vercel.",
+"Ce site utilise un unique cookie de mesure d'audience (Google Analytics), destiné à comprendre la fréquentation du site. Il n'est déposé qu'après votre accord explicite, donné via le bandeau affiché lors de votre première visite. Aucun cookie publicitaire, aucun outil de reciblage publicitaire et aucun croisement de données entre sites ne sont utilisés.":
+    "Este sitio utiliza una única cookie de medición de audiencia (Google Analytics), destinada a entender cómo se visita el sitio. Solo se instala tras tu consentimiento explícito, dado a través del banner que aparece en tu primera visita. No se utiliza ninguna cookie publicitaria, ninguna herramienta de retargeting ni ningún cruce de datos entre sitios.",
+"Les données collectées (pages consultées, provenance, type d'appareil) sont transmises à Google LLC (États-Unis), dans le cadre du Data Privacy Framework UE–États-Unis. Vous pouvez à tout moment refuser ou retirer votre consentement.":
+    "Los datos recogidos (páginas vistas, procedencia, tipo de dispositivo) se transmiten a Google LLC (Estados Unidos), en el marco del Data Privacy Framework UE-EE. UU. Puedes rechazar o retirar tu consentimiento en cualquier momento.",
+"Gérer mes préférences de cookies": "Gestionar mis preferencias de cookies",
 })
