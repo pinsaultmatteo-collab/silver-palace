@@ -224,18 +224,18 @@ T = {
 "Les Danseuses": "The Dancers",
 "Sur scène comme dans les salons, nos danseuses font de chaque nuit un spectacle : pole dance, shows chorégraphiés et danses privées, dans la lumière rouge et or du club.":
     "On stage and in the private rooms alike, our dancers turn every night into a show: pole dance, choreographed sets and private dances, in the club's red and gold light.",
-"Danseuse en lingerie noire au pied de la barre de pole dance, Silver Palace, club de striptease à Toulouse":
-    "Dancer in black lingerie at the foot of the pole, Silver Palace, strip club in Toulouse",
-"Danseuse en lingerie violette allongée sous les néons du Silver Palace Toulouse":
-    "Dancer in purple lingerie lying under the neon at Silver Palace Toulouse",
-"Danseuse en tenue de show à la barre lors d'une soirée à thème du Silver Palace Toulouse":
-    "Dancer in show costume at the pole during a Silver Palace Toulouse theme night",
-"Danseuse en satin rouge parmi les pétales de rose dans un salon privé du Silver Palace":
-    "Dancer in red satin among rose petals in a Silver Palace private room",
-"Danseuse enlacée à la barre de pole dance dans la lumière rouge du Silver Palace Toulouse":
-    "Dancer wrapped around the pole in the red light of Silver Palace Toulouse",
-"Danseuse posant sur la scène du Silver Palace, cabaret et club de nuit à Toulouse":
-    "Dancer posing on the Silver Palace stage, cabaret and night club in Toulouse",
+"Danseuse en clair-obscur sur la scène du Silver Palace, club de striptease à Toulouse":
+    "Dancer in chiaroscuro on the Silver Palace stage, strip club in Toulouse",
+"Danseuse dans l'ambiance feutrée du Silver Palace, cabaret à Toulouse":
+    "Dancer in the hushed atmosphere of Silver Palace, cabaret in Toulouse",
+"Silhouette d'une danseuse en talons sur la scène du Silver Palace Toulouse":
+    "Silhouette of a dancer in heels on the Silver Palace Toulouse stage",
+"Danseuse en lingerie dans un salon privé du Silver Palace à Toulouse":
+    "Dancer in lingerie in a Silver Palace private room in Toulouse",
+"Danseuse à la barre de pole dance sous les néons du Silver Palace Toulouse":
+    "Dancer on the pole under the neon at Silver Palace Toulouse",
+"Danseuse au bar du Silver Palace sous les néons, club de nuit à Toulouse":
+    "Dancer at the Silver Palace bar under the neon, night club in Toulouse",
 "Sur scène": "On stage",
 "Sous les néons": "Under the neon",
 "Soirées à thème": "Theme nights",
@@ -247,16 +247,16 @@ T = {
 "Les visages de la <span class=\"accent-italic\">nuit</span>":
     "The faces of the <span class=\"accent-italic\">night</span>",
 "Rencontrez-les": "Meet them",
-"Eva, danseuse du Silver Palace, club de striptease à Toulouse":
-    "Eva, dancer at Silver Palace, strip club in Toulouse",
-"Ruby, danseuse des soirées à thème du Silver Palace Toulouse":
-    "Ruby, theme-night dancer at Silver Palace Toulouse",
-"Scarlett, danseuse dans les salons privés du Silver Palace":
-    "Scarlett, private-room dancer at Silver Palace",
-"Nova, danseuse de pole dance au Silver Palace Toulouse":
-    "Nova, pole dancer at Silver Palace Toulouse",
-"Jade, danseuse et chorégraphe des shows du Silver Palace":
-    "Jade, dancer and choreographer at Silver Palace",
+"Isia, danseuse du Silver Palace, club de striptease à Toulouse":
+    "Isia, dancer at Silver Palace, strip club in Toulouse",
+"Lila, danseuse du Silver Palace, cabaret à Toulouse":
+    "Lila, dancer at Silver Palace, cabaret in Toulouse",
+"Luna, danseuse du Silver Palace à Toulouse":
+    "Luna, dancer at Silver Palace in Toulouse",
+"Maya, danseuse de pole dance au Silver Palace Toulouse":
+    "Maya, pole dancer at Silver Palace Toulouse",
+"Melody, danseuse du Silver Palace, club de nuit à Toulouse":
+    "Melody, dancer at Silver Palace, night club in Toulouse",
 "Danseuse précédente": "Previous dancer",
 "Danseuse suivante": "Next dancer",
 "Table dance &amp; shows privés": "Table dance &amp; private shows",

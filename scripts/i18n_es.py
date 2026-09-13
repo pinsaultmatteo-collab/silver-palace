@@ -202,18 +202,18 @@ T_ES = {
 "Les Danseuses": "Las Bailarinas",
 "Sur scène comme dans les salons, nos danseuses font de chaque nuit un spectacle : pole dance, shows chorégraphiés et danses privées, dans la lumière rouge et or du club.":
     "En el escenario y en los salones, nuestras bailarinas convierten cada noche en un espectáculo: pole dance, shows coreografiados y bailes privados, bajo la luz roja y dorada del club.",
-"Danseuse en lingerie noire au pied de la barre de pole dance, Silver Palace, club de striptease à Toulouse":
-    "Bailarina en lencería negra al pie de la barra de pole dance, Silver Palace, club de striptease en Toulouse",
-"Danseuse en lingerie violette allongée sous les néons du Silver Palace Toulouse":
-    "Bailarina en lencería violeta tumbada bajo los neones del Silver Palace Toulouse",
-"Danseuse en tenue de show à la barre lors d'une soirée à thème du Silver Palace Toulouse":
-    "Bailarina con traje de show en la barra durante una noche temática del Silver Palace Toulouse",
-"Danseuse en satin rouge parmi les pétales de rose dans un salon privé du Silver Palace":
-    "Bailarina en satén rojo entre pétalos de rosa en un salón privado del Silver Palace",
-"Danseuse enlacée à la barre de pole dance dans la lumière rouge du Silver Palace Toulouse":
-    "Bailarina abrazada a la barra de pole dance bajo la luz roja del Silver Palace Toulouse",
-"Danseuse posant sur la scène du Silver Palace, cabaret et club de nuit à Toulouse":
-    "Bailarina posando en el escenario del Silver Palace, cabaret y club nocturno en Toulouse",
+"Danseuse en clair-obscur sur la scène du Silver Palace, club de striptease à Toulouse":
+    "Bailarina en claroscuro en el escenario del Silver Palace, club de striptease en Toulouse",
+"Danseuse dans l'ambiance feutrée du Silver Palace, cabaret à Toulouse":
+    "Bailarina en el ambiente íntimo del Silver Palace, cabaret en Toulouse",
+"Silhouette d'une danseuse en talons sur la scène du Silver Palace Toulouse":
+    "Silueta de una bailarina en tacones en el escenario del Silver Palace Toulouse",
+"Danseuse en lingerie dans un salon privé du Silver Palace à Toulouse":
+    "Bailarina en lencería en un salón privado del Silver Palace en Toulouse",
+"Danseuse à la barre de pole dance sous les néons du Silver Palace Toulouse":
+    "Bailarina en la barra de pole dance bajo los neones del Silver Palace Toulouse",
+"Danseuse au bar du Silver Palace sous les néons, club de nuit à Toulouse":
+    "Bailarina en la barra del Silver Palace bajo los neones, club nocturno en Toulouse",
 "Sur scène": "En escena",
 "Sous les néons": "Bajo los neones",
 "Soirées à thème": "Noches temáticas",
@@ -224,16 +224,16 @@ T_ES = {
 "Les visages de la <span class=\"accent-italic\">nuit</span>":
     "Los rostros de la <span class=\"accent-italic\">noche</span>",
 "Rencontrez-les": "Conócelas",
-"Eva, danseuse du Silver Palace, club de striptease à Toulouse":
-    "Eva, bailarina del Silver Palace, club de striptease en Toulouse",
-"Ruby, danseuse des soirées à thème du Silver Palace Toulouse":
-    "Ruby, bailarina de las noches temáticas del Silver Palace Toulouse",
-"Scarlett, danseuse dans les salons privés du Silver Palace":
-    "Scarlett, bailarina de los salones privados del Silver Palace",
-"Nova, danseuse de pole dance au Silver Palace Toulouse":
-    "Nova, bailarina de pole dance del Silver Palace Toulouse",
-"Jade, danseuse et chorégraphe des shows du Silver Palace":
-    "Jade, bailarina y coreógrafa de los shows del Silver Palace",
+"Isia, danseuse du Silver Palace, club de striptease à Toulouse":
+    "Isia, bailarina del Silver Palace, club de striptease en Toulouse",
+"Lila, danseuse du Silver Palace, cabaret à Toulouse":
+    "Lila, bailarina del Silver Palace, cabaret en Toulouse",
+"Luna, danseuse du Silver Palace à Toulouse":
+    "Luna, bailarina del Silver Palace en Toulouse",
+"Maya, danseuse de pole dance au Silver Palace Toulouse":
+    "Maya, bailarina de pole dance del Silver Palace Toulouse",
+"Melody, danseuse du Silver Palace, club de nuit à Toulouse":
+    "Melody, bailarina del Silver Palace, club nocturno en Toulouse",
 "Danseuse précédente": "Bailarina anterior",
 "Danseuse suivante": "Bailarina siguiente",
 "Table dance &amp; shows privés": "Table dance y shows privados",
