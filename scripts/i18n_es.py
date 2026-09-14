@@ -155,8 +155,8 @@ T_ES = {
     "Sumérgete en un decorado suntuoso donde cada detalle está pensado para despertar tus sentidos. Un ambiente sensual e íntimo, luces que acarician las curvas y un servicio exclusivo que te sitúa en el centro de la noche.",
 "Le Silver Palace n'est pas seulement un club de striptease à Toulouse : c'est une expérience où luxe, tentation et sophistication se rencontrent. Un verre offert au bar devient le prélude d'une soirée d'exception, dans un cadre aux codes discrets réservé aux connaisseurs.":
     "El Silver Palace es mucho más que un club de striptease en Toulouse: es una experiencia donde lujo, tentación y sofisticación se dan la mano. Una copa cortesía de la casa en la barra es el preludio de una noche excepcional, en un entorno de códigos discretos reservado a los entendidos.",
-"Danseuse dans un fauteuil baroque argenté, l'écrin feutré du Silver Palace, club privé à Toulouse":
-    "Bailarina en un sillón barroco plateado, el entorno íntimo del Silver Palace, club privado en Toulouse",
+"Danseuse accoudée au bar du Silver Palace sous l'enseigne néon, club privé à Toulouse":
+    "Bailarina apoyada en la barra del Silver Palace bajo el letrero de neón, club privado en Toulouse",
 "Le Silver": "El Silver",
 "Mardi — Samedi": "Martes — Sábado",
 "Privé &amp; discret": "Privado y discreto",
@@ -212,8 +212,8 @@ T_ES = {
     "Bailarina en lencería en un salón privado del Silver Palace en Toulouse",
 "Danseuse à la barre de pole dance sous les néons du Silver Palace Toulouse":
     "Bailarina en la barra de pole dance bajo los neones del Silver Palace Toulouse",
-"Danseuse au bar du Silver Palace sous les néons, club de nuit à Toulouse":
-    "Bailarina en la barra del Silver Palace bajo los neones, club nocturno en Toulouse",
+"Danseuse en lingerie sous les néons du Silver Palace, club de striptease à Toulouse":
+    "Bailarina en lencería bajo los neones del Silver Palace, club de striptease en Toulouse",
 "Sur scène": "En escena",
 "Sous les néons": "Bajo los neones",
 "Soirées à thème": "Noches temáticas",

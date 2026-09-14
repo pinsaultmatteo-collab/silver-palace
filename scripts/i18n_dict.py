@@ -177,8 +177,8 @@ T = {
     "Step into sumptuous surroundings where every detail is designed to awaken your senses. A sensual, hushed atmosphere, lights that trace every curve, and exclusive service that puts you at the centre of the night.",
 "Le Silver Palace n'est pas seulement un club de striptease à Toulouse : c'est une expérience où luxe, tentation et sophistication se rencontrent. Un verre offert au bar devient le prélude d'une soirée d'exception, dans un cadre aux codes discrets réservé aux connaisseurs.":
     "Silver Palace is more than a strip club in Toulouse: it is an experience where luxury, temptation and sophistication meet. A drink on the house at the bar becomes the prelude to an exceptional evening, in a discreet setting reserved for those in the know.",
-"Danseuse dans un fauteuil baroque argenté, l'écrin feutré du Silver Palace, club privé à Toulouse":
-    "Dancer in a silver baroque armchair, the hushed setting of Silver Palace, private club in Toulouse",
+"Danseuse accoudée au bar du Silver Palace sous l'enseigne néon, club privé à Toulouse":
+    "Dancer leaning on the Silver Palace bar under the neon sign, private club in Toulouse",
 "Le Silver": "The Silver",
 "Mardi — Samedi": "Tuesday — Saturday",
 "Privé &amp; discret": "Private &amp; discreet",
@@ -234,8 +234,8 @@ T = {
     "Dancer in lingerie in a Silver Palace private room in Toulouse",
 "Danseuse à la barre de pole dance sous les néons du Silver Palace Toulouse":
     "Dancer on the pole under the neon at Silver Palace Toulouse",
-"Danseuse au bar du Silver Palace sous les néons, club de nuit à Toulouse":
-    "Dancer at the Silver Palace bar under the neon, night club in Toulouse",
+"Danseuse en lingerie sous les néons du Silver Palace, club de striptease à Toulouse":
+    "Dancer in lingerie under the neon at Silver Palace, strip club in Toulouse",
 "Sur scène": "On stage",
 "Sous les néons": "Under the neon",
 "Soirées à thème": "Theme nights",
