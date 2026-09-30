@@ -54,7 +54,7 @@ T_ES = {
 # ---- JSON-LD
 "Club de striptease et cabaret de nuit haut de gamme à Toulouse. Danseuses professionnelles, shows sensuels, table dance, bar à champagne et ambiance feutrée. Réservé aux adultes.":
     "Club de striptease y cabaret nocturno de alta gama en Toulouse. Bailarinas profesionales, shows sensuales, table dance, bar de champán y ambiente íntimo. Solo para adultos.",
-"Vivez la nuit. Touchez le rêve.": "Vive la noche. Toca el sueño.",
+"Vivez la nuit. Laissez-vous envoûter.": "Vive la noche. Déjate hechizar.",
 "club striptease Toulouse, cabaret Toulouse, gentlemen's club Toulouse, table dance, club de nuit Toulouse, spectacle sensuel":
     "club striptease Toulouse, cabaret Toulouse, gentlemen's club Toulouse, table dance, club nocturno Toulouse, espectáculo sensual",
 "Bar à champagne": "Bar de champán",
@@ -164,8 +164,8 @@ T_ES = {
 "Nuits par semaine": "Noches por semana",
 
 # ---- Home : l'expérience
-"Trois façons de <span class=\"accent-italic\">toucher le rêve</span>":
-    "Tres formas de <span class=\"accent-italic\">tocar el sueño</span>",
+"Trois façons de <span class=\"accent-italic\">vivre la nuit</span>":
+    "Tres formas de <span class=\"accent-italic\">vivir la noche</span>",
 "L'Expérience": "La Experiencia",
 "Shows &amp; Table Dance": "Shows y Table Dance",
 "Des danseuses d'exception, des shows sensuels et des danses privées dans l'intimité de nos salons. L'art du striptease élevé au rang de spectacle.":
@@ -489,8 +489,8 @@ T_ES.update({
 "Champagnes de grandes maisons et spiritueux de caractère : le bar est le point de départ de toutes les nuits — premier verre offert.":
     "Champanes de las grandes casas y destilados con carácter: la barra es el punto de partida de todas las noches — primera copa cortesía de la casa.",
 "La devise du Silver Palace": "El lema del Silver Palace",
-"« Vivez la nuit. <span class=\"accent-italic\">Touchez le rêve.</span> »":
-    "«Vive la noche. <span class=\"accent-italic\">Toca el sueño.</span>»",
+"« Vivez la nuit. <span class=\"accent-italic\">Laissez-vous envoûter.</span> »":
+    "«Vive la noche. <span class=\"accent-italic\">Déjate hechizar.</span>»",
 "Nos valeurs": "Nuestros valores",
 "Trois mots, une <span class=\"accent-italic\">promesse</span>":
     "Tres palabras, una <span class=\"accent-italic\">promesa</span>",

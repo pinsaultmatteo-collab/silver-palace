@@ -74,7 +74,7 @@ T = {
 # ---- JSON-LD
 "Club de striptease et cabaret de nuit haut de gamme à Toulouse. Danseuses professionnelles, shows sensuels, table dance, bar à champagne et ambiance feutrée. Réservé aux adultes.":
     "Upmarket strip club and late-night cabaret in Toulouse. Professional dancers, sensual shows, table dance, champagne bar and a hushed atmosphere. Adults only.",
-"Vivez la nuit. Touchez le rêve.": "Live the night. Touch the dream.",
+"Vivez la nuit. Laissez-vous envoûter.": "Live the night. Be spellbound.",
 "club striptease Toulouse, cabaret Toulouse, gentlemen's club Toulouse, table dance, club de nuit Toulouse, spectacle sensuel":
     "strip club Toulouse, cabaret Toulouse, gentlemen's club Toulouse, table dance, night club Toulouse, sensual show",
 "Bar à champagne": "Champagne bar",
@@ -186,8 +186,8 @@ T = {
 "Nuits par semaine": "Nights a week",
 
 # ---- Home : l'expérience
-"Trois façons de <span class=\"accent-italic\">toucher le rêve</span>":
-    "Three ways to <span class=\"accent-italic\">touch the dream</span>",
+"Trois façons de <span class=\"accent-italic\">vivre la nuit</span>":
+    "Three ways to <span class=\"accent-italic\">live the night</span>",
 "L'Expérience": "The Experience",
 "Shows &amp; Table Dance": "Shows &amp; Table Dance",
 "Des danseuses d'exception, des shows sensuels et des danses privées dans l'intimité de nos salons. L'art du striptease élevé au rang de spectacle.":
@@ -515,8 +515,8 @@ T.update({
 "Champagnes de grandes maisons et spiritueux de caractère : le bar est le point de départ de toutes les nuits — premier verre offert.":
     "Champagnes from the great houses and spirits with character: the bar is where every night begins — first drink on us.",
 "La devise du Silver Palace": "The Silver Palace motto",
-"« Vivez la nuit. <span class=\"accent-italic\">Touchez le rêve.</span> »":
-    "\"Live the night. <span class=\"accent-italic\">Touch the dream.</span>\"",
+"« Vivez la nuit. <span class=\"accent-italic\">Laissez-vous envoûter.</span> »":
+    "\"Live the night. <span class=\"accent-italic\">Be spellbound.</span>\"",
 "Nos valeurs": "Our values",
 "Trois mots, une <span class=\"accent-italic\">promesse</span>":
     "Three words, one <span class=\"accent-italic\">promise</span>",
