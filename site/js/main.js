@@ -597,7 +597,8 @@
   /* ---------- Le Spectacle : séquence vidéo pilotée au scroll ---------- */
   const spectacleCanvas = document.getElementById("spectacleCanvas");
   if (spectacleCanvas) {
-    const FRAME_COUNT = 76;
+    const FRAME_COUNT = 121;
+    const STILL_FRAME = 100; // assise, visage visible : image fixe si animations reduites
     const framePath = (i) => `images/spectacle/frame-${String(i + 1).padStart(3, "0")}.jpg`;
     const sCtx = spectacleCanvas.getContext("2d");
     const frames = new Array(FRAME_COUNT).fill(null);
@@ -675,10 +676,10 @@
     if (reduceMotion) {
       // version statique : une frame du cœur de la séquence
       const still = new Image();
-      still.src = framePath(40);
+      still.src = framePath(STILL_FRAME);
       still.onload = () => {
-        frames[40] = still;
-        drawFrame(40);
+        frames[STILL_FRAME] = still;
+        drawFrame(STILL_FRAME);
         spectacleCanvas.classList.add("ready");
       };
     } else {
