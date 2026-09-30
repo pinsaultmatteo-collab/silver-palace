@@ -702,7 +702,8 @@
   const teaser = document.getElementById("apercu");
   const teaserCanvas = document.getElementById("teaserCanvas");
   if (teaser && teaserCanvas) {
-    const T_COUNT = 76;
+    const T_COUNT = 101;
+    const T_STILL = 73; // assise au pied de la barre : image fixe si animations reduites
     const tPath = (i) => `images/apercu/frame-${String(i + 1).padStart(3, "0")}.jpg`;
     const tCtx = teaserCanvas.getContext("2d");
     const tFrames = new Array(T_COUNT).fill(null);
@@ -756,8 +757,10 @@
         im.onload = () => {
           tFrames[i] = im;
           tLoaded++;
-          if (tLoaded === 1) {
-            tDraw(reduceMotion ? Math.round(T_COUNT / 2) : 0);
+          // on revele le canvas des que SON image de depart est arrivee,
+          // quel que soit l'ordre de chargement
+          if (i === (reduceMotion ? T_STILL : 0)) {
+            tDraw(i);
             teaserCanvas.classList.add("ready");
           }
           if (tLoaded === T_COUNT) tKick();
