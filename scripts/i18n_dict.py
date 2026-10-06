@@ -443,7 +443,12 @@ T.update({
 "De la table dance au salon VIP, nos danseuses vous invitent dans l'intimité de leurs shows privés. Voici la carte officielle du club.":
     "From table dance to VIP room, our dancers invite you into the intimacy of their private shows. Here is the club's official menu.",
 "Shows Privés": "Private Shows",
+"Salle principale": "Main room",
+"À votre table, dans la salle": "At your table, in the main room",
+"Salon privé": "Private room",
+"En tête-à-tête, dans nos salons": "One-to-one, in our private rooms",
 "1 chanson topless (salle principale)": "1 song topless (main room)",
+"1 chanson topless": "1 song topless",
 "1 chanson nue": "1 song fully nude", "2 chansons nue": "2 songs fully nude",
 "3 chansons nue": "3 songs fully nude",
 "20 min + ½ bouteille de champagne": "20 min + ½ bottle of champagne",

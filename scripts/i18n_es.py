@@ -418,7 +418,12 @@ T_ES.update({
 "De la table dance au salon VIP, nos danseuses vous invitent dans l'intimité de leurs shows privés. Voici la carte officielle du club.":
     "Del table dance al salón VIP, nuestras bailarinas te invitan a la intimidad de sus shows privados. Esta es la carta oficial del club.",
 "Shows Privés": "Shows Privados",
+"Salle principale": "Sala principal",
+"À votre table, dans la salle": "En tu mesa, en la sala",
+"Salon privé": "Salón privado",
+"En tête-à-tête, dans nos salons": "A solas, en nuestros salones",
 "1 chanson topless (salle principale)": "1 canción en topless (sala principal)",
+"1 chanson topless": "1 canción en topless",
 "1 chanson nue": "1 canción desnuda", "2 chansons nue": "2 canciones desnuda",
 "3 chansons nue": "3 canciones desnuda",
 "20 min + ½ bouteille de champagne": "20 min + ½ botella de champán",

@@ -2304,6 +2304,16 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 /* ---------- Carte (menus) ---------- */
 .menu-section { max-width: 860px; margin: 0 auto; }
+.menu-single {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* 2e colonne du salon privé : titre vide qui sert d'aligneur, sans son trait */
+.menu-cat.menu-cat-suite::after { display: none; }
+/* en colonnes empilées, pas de faux titre du tout */
+@media (max-width: 900px) {
+  .menu-cat.menu-cat-suite, .menu-cat-suite + .menu-cat-note { display: none; }
+}
 .menu-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;

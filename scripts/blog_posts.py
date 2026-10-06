@@ -27,8 +27,8 @@ POSTS = [
     "meta_title": "Organiser un EVG à Toulouse — Le Guide Complet | Silver Palace",
     "description": "Où sortir, quoi prévoir, combien ça coûte : le guide pour organiser un enterrement de vie de garçon réussi à Toulouse, du dîner à la nuit en club.",
     "keywords": "EVG Toulouse, enterrement de vie de garçon Toulouse, organiser EVG Toulouse",
-    "image": "/images/danseuse-show-bunny-silver-palace-toulouse.jpg",
-    "image_alt": "Danseuse en tenue de show lors d'une soirée EVG au Silver Palace Toulouse",
+    "image": "/images/article-bar-bouteille-silver-palace-toulouse.jpg",
+    "image_alt": "Danseuse au bar du Silver Palace, bouteille à la main, ambiance de soirée EVG à Toulouse",
     "excerpt": "Le témoin idéal ne laisse rien au hasard. Programme, budget, erreurs à éviter : tout ce qu'il faut savoir pour réussir un enterrement de vie de garçon dans la Ville rose.",
     "tags": ["EVG", "Toulouse", "Organisation"],
     "chapo": "Vous êtes témoin, et la mission est tombée : organiser l'EVG. À Toulouse, la matière ne manque pas — encore faut-il construire une soirée qui tienne debout jusqu'au bout de la nuit. Voici la méthode.",
@@ -89,10 +89,10 @@ POSTS = [
     "reading": 6,
     "title": "Première visite en club de striptease à Toulouse : les codes à connaître",
     "meta_title": "Club de Striptease à Toulouse : les Codes d'une Première Visite | Silver Palace",
-    "description": "Tarifs, pourboires, ce qui se fait et ce qui ne se fait pas : le guide honnête pour une première visite en club de striptease à Toulouse, sans fausse note.",
+    "description": "Tarifs, codes de la maison, ce qui se fait et ce qui ne se fait pas : le guide honnête pour une première visite en club de striptease à Toulouse, sans fausse note.",
     "keywords": "club de striptease Toulouse, première visite club striptease, codes club striptease",
-    "image": "/images/danseuse-lingerie-noire-pole-silver-palace-toulouse.jpg",
-    "image_alt": "Danseuse en lingerie noire à la barre, ambiance d'un club de striptease à Toulouse",
+    "image": "/images/article-bar-neon-silver-palace-toulouse.jpg",
+    "image_alt": "Danseuse accoudée au bar sous les néons du Silver Palace, club de striptease à Toulouse",
     "excerpt": "Beaucoup n'osent pas pousser la porte, faute de savoir comment ça se passe. Voici, sans détour, ce qui vous attend derrière le rideau — et les quelques règles qui font la différence.",
     "tags": ["Codes", "Première visite", "Toulouse"],
     "chapo": "On imagine souvent le club de striptease à partir des films. La réalité est à la fois plus simple et plus codifiée. Petit manuel à l'usage de celles et ceux qui viennent pour la première fois.",
@@ -120,9 +120,6 @@ POSTS = [
 <p>Les téléphones restent dans la poche. La discrétion est la contrepartie que le club offre à ses clients comme à ses artistes : personne ne veut se retrouver sur le réseau social de quelqu'un d'autre.</p>
 <h3>On demande, on n'impose pas</h3>
 <p>Une danseuse peut refuser une danse, et vous pouvez refuser une proposition. Un « non merci » poli est une réponse parfaitement normale, dans les deux sens.</p>
-
-<h2>Le pourboire : combien, quand, comment</h2>
-<p>Le pourboire n'est pas obligatoire en France, mais il fait partie de la culture du lieu. Après un show qui vous a plu, quelques euros glissés discrètement sont toujours appréciés. Après une danse privée, c'est un usage courant sans être une règle. Ni obligation, ni tarif caché : un geste, à votre appréciation.</p>
 
 <h2>Venir seul, en couple, en groupe</h2>
 <p>Les trois se pratiquent. Venir seul n'a rien d'étrange — c'est même fréquent en semaine, et l'ambiance de bar s'y prête. Les couples sont les bienvenus et représentent une part croissante de la clientèle. Quant aux groupes, ils tirent le meilleur de la soirée en réservant à l'avance, notamment pour les <a href="/events">EVG et anniversaires</a>.</p>
